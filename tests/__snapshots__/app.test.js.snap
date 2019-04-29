@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render without crashing 1`] = `
+<div>
+  <h2>
+    Welcome to author's haven 
+  </h2>
+</div>
+`;
