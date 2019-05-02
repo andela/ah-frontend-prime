@@ -6,6 +6,7 @@
   "scripts": {
     "test": "jest -u --coverage",
     "test:watch": "jest --watch",
+    "test:coveralls": "jest --coverage --coverageReporters=text-lcov | coveralls",
     "start": "webpack-dev-server --open --hot --mode development",
     "build": "webpack --mode production",
     "lint": "eslint . --ignore-path .gitignore",
@@ -35,6 +36,7 @@
     "@babel/preset-env": "^7.4.4",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "coveralls": "^3.0.3",
     "css-loader": "^2.1.1",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
