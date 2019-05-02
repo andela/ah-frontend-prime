@@ -4,5 +4,16 @@ node_js:
 cache:
   directories:
     - node_modules
+env:
+  global:
+    -   CC_TEST_REPORTER_ID=1a1ba6ab2f82f5d4b81a9396c079eb32f7e9ebc04dbb9c640d23be9fff3b25a3
+before_script:
+  - export CC_TEST_REPORTER_ID=1a1ba6ab2f82f5d4b81a9396c079eb32f7e9ebc04dbb9c640d23be9fff3b25a3
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - npm run test:coveralls
+
+after_script:
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
