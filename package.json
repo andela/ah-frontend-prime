@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Authors Haven - A Social platform for the creative at heart",
   "main": "index.js",
+  "engines": {
+    "node": "10.15.3",
+    "npm": "6.4.1"
+  },
   "scripts": {
     "test": "jest -u --coverage",
     "test:watch": "jest --watch",
@@ -24,6 +28,7 @@
   "dependencies": {
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
+    "express": "^4.16.4",
     "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
     "react-test-renderer": "^16.8.6",
