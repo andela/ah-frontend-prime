@@ -14,10 +14,10 @@ module.exports = {
     "\\.(css|jpg|png|scss)$": "<rootDir>/ignore-css.js"
   },
   // A list of paths to directories that Jest should use to search for files in
-  roots: ["<rootDir>/tests/"],
+  roots: ["<rootDir>./src/tests/"],
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: ["<rootDir>/SetupTests.js"],
+  setupFiles: ["<rootDir>./src/SetupTests.js"],
 
   // The test environment that will be used for testing
   testEnvironment: "jest-environment-jsdom",

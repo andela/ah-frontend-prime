@@ -2,3 +2,168 @@ h2 {
   color: #1b7999;
   text-align: center;
 }
+
+div {
+  font-family: Quantico;
+}
+
+.card-title {
+  text-align: center;
+}
+
+.inner {
+  width: 94%;
+  margin: 2%;
+}
+
+.cart-author {
+  float: left;
+  text-align: left;
+}
+
+.card-content {
+  text-align: right;
+}
+
+.card-date {
+  float: left;
+  text-align: left;
+  font-style: italic;
+}
+
+.article-card {
+  text-align: left;
+  float: left;
+  width: 70%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
+}
+
+.best-article {
+  width: 40%;
+  min-width: 300px;
+  float: left;
+}
+
+.top-articles {
+  width: 30%;
+  float: left;
+  min-width: 230px;
+}
+
+.big-container {
+  font-family: Quantico;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  text-align: center;
+  font-size: small;
+}
+
+.links {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.img-top {
+  width: 90%;
+  min-width: 200px;
+}
+
+.img-tile {
+  float: right;
+  width: 27%;
+  margin-left: 1%;
+}
+
+.articles-top {
+  width: 90%;
+  font-size: xx-small;
+  display: block;
+  min-height: 400px;
+  margin-left: 5%;
+}
+
+.best-article-card {
+  width: 90%;
+  text-align: left;
+}
+.articles {
+  float: left;
+  width: 45%;
+  text-align: center;
+  height: 100%;
+  margin-left: 5%;
+  min-width: 250px;
+}
+
+.articles1 {
+  float: right;
+  width: 30%;
+  text-align: center;
+  height: 100%;
+  margin-right: 5%;
+  min-width: 270px;
+}
+
+.heading {
+  width: 90%;
+  margin-top: 100px;
+  margin-left: 5%;
+  text-align: left;
+  min-width: 300px;
+}
+
+.tile {
+  height: 300px;
+}
+
+.topbar {
+  background-color: #0d195a;
+}
+
+.nav-links {
+  color: white;
+}
+
+.nav-div {
+  margin-left: 2%;
+}
+
+.article {
+  width: 90%;
+  float: left;
+  margin-left: 5%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 230px;
+  border-bottom-style: solid;
+  border-radius: 10px;
+  border-width: 1px;
+  border-color: rgb(200, 200, 200);
+}
+
+a {
+  text-decoration: none;
+}
+
+.top-button {
+  color: white;
+  border-style: solid;
+  border-width: 0.5px;
+  border-color: grey;
+}
+
+@media only screen and (max-width: 600px) {
+  .article {
+    width: 80%;
+    float: none;
+    margin-left: 10%;
+  }
+  .img-tile {
+    margin: 10px 2% 10px 2%;
+    width: 80%;
+    float: none;
+  }
+}

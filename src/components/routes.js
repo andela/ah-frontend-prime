@@ -1,22 +1,19 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import React, { Component } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 
-
-import Login from './loginComponent';
-import Home from './home';
-
-
+import Login from "./loginComponent";
+import Home from "./home";
 
 class Routes extends Component {
-
-  render(){
+  render() {
     return (
       <BrowserRouter>
-			  <Route exact path="/" component={Home} />
-			  <Route path="/login" component={Login} />
+        <Route exact path="/" component={Home} />
+        <Route path="/login" component={Login} />
+        <Route exact path="/home" component={Home} />
       </BrowserRouter>
     );
-  };
+  }
 }
 
 export default Routes;
