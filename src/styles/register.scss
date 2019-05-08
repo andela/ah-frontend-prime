@@ -14,18 +14,45 @@
     width: 100%;
 
     .face-book,
-    .twitter,
     .google {
       margin: 10px 0 5px 10%;
       color: black;
       width: 80%;
-      font-family: "Quantico", sans-serif;
       border: 1px solid black;
-      font-weight: bold;
+      border-radius: 5px;
+      font-weight: 500;
+      font-size: smaller;
+      text-align: start;
+      display: inline-block;
+
+      .metro {
+        padding: 20px 10px 10px 60px !important;
+        border-color: #0000;
+        color: #000000 !important;
+        font-weight: 500;
+        font-size: 14px;
+        border-radius: 5px;
+        font-family: Quantico;
+        text-align: left;
+        height: 50px;
+        background: #ffff;
+      }
+
+      button {
+        font-weight: 500;
+        width: 100%;
+        box-shadow: none !important;
+        border-radius: 5px !important;
+        padding-left: 60px !important;
+        font-family: Quantico !important;
+        color: #000000 !important;
+      }
     }
 
     img {
       padding-right: 10px;
+      float: left;
+      margin-top: -10px;
     }
   }
 
@@ -67,25 +94,52 @@
     text-decoration: none;
   }
 
+  @media (max-width: 1199px) {
+    .button-collective {
+      border-right: 0;
+      margin: 10px 0 5px -10px;
+    }
+
+    form .textField {
+      width: 70%;
+      margin: 0;
+    }
+
+    #login-form form {
+      padding: 0 40px;
+    }
+
+    #email,
+    #password {
+      width: 100% !important;
+      padding: 15px 10px;
+    }
+
+    form .button-success {
+      width: 70%;
+      margin: 15px 0 !important;
+    }
+  }
+
   @media (max-width: 959px) {
     .button-collective {
-      border-right: none;
+      border-right: 1px;
+      margin: 10px 0 5px 80px;
     }
     .google,
-    .twitter,
     .face-book {
       width: 100%;
-      margin: 0px;
+      margin: 0;
     }
     form .textField {
       width: 100%;
-      margin: 0px;
+      margin: 0;
     }
     #login-form {
       width: 81%;
     }
     #login-form form {
-      padding: 0px 40px;
+      padding: 0 40px;
     }
     #email,
     #password {
@@ -94,10 +148,9 @@
     }
     form .button-success {
       width: 100%;
-      margin: 15px 0px !important;
+      margin: 15px 0 !important;
     }
   }
-}
 
 @media (max-width: 768px) {
   #registerForm {
@@ -141,5 +194,12 @@
   }
   .button-success {
     width: 150% !important;
+  }
+}
+  @media (max-width: 378px) {
+    .button-collective {
+      border-right: 0px;
+      margin-right: -100px;
+    }
   }
 }

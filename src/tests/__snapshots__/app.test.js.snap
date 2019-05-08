@@ -1,0 +1,477 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App login Component 1`] = `
+<div>
+  <div
+    className="MuiGrid-container-113 MuiGrid-spacing-xs-24-137"
+  >
+    <div
+      className="MuiGrid-item-114 MuiGrid-grid-md-2-171 MuiGrid-grid-lg-2-185"
+    />
+    <div
+      className="MuiGrid-item-114 MuiGrid-grid-md-8-177 MuiGrid-grid-lg-8-191"
+    >
+      <div
+        className="MuiPaper-root-19 MuiPaper-elevation2-23 MuiPaper-rounded-20 Paper"
+      >
+        <h3>
+          Welcome back!
+        </h3>
+        <p>
+          SignIn to like, dislike, favorite and unfavorite various articles,
+          <br />
+          follow authors and comment on articles.
+        </p>
+        <div
+          className="MuiGrid-container-113 MuiGrid-spacing-xs-24-137"
+        >
+          <div
+            className="MuiGrid-item-114 MuiGrid-grid-md-6-175 MuiGrid-grid-lg-6-189"
+          >
+            <div
+              className="button-collective"
+            >
+              <div>
+                <div>
+                  <div
+                    className="face-book"
+                  >
+                    <span
+                      style={
+                        Object {
+                          "opacity": 0.6,
+                          "transition": "opacity 0.5s",
+                        }
+                      }
+                    >
+                      <button
+                        className="kep-login-facebook metro"
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        <img
+                          alt="facebook"
+                          height="40px"
+                          src="https://img.icons8.com/color/96/000000/facebook.png"
+                          width="=40px"
+                        />
+                        SIGN IN WITH FACEBOOK
+                      </button>
+                      <style
+                        dangerouslySetInnerHTML={
+                          Object {
+                            "__html": Array [
+                              Array [
+                                9,
+                                ".kep-login-facebook{font-family:Helvetica,sans-serif;font-weight:700;-webkit-font-smoothing:antialiased;color:#fff;cursor:pointer;display:inline-block;font-size:calc(.27548vw + 12.71074px);text-decoration:none;text-transform:uppercase;transition:background-color .3s,border-color .3s;background-color:#4c69ba;border:calc(.06887vw + .67769px) solid #4c69ba;padding:calc(.34435vw + 13.38843px) calc(.34435vw + 18.38843px)}.kep-login-facebook.small{padding:calc(.34435vw + 3.38843px) calc(.34435vw + 8.38843px)}.kep-login-facebook.medium{padding:calc(.34435vw + 8.38843px) calc(.34435vw + 13.38843px)}.kep-login-facebook.metro{border-radius:0}.kep-login-facebook .fa{margin-right:calc(.34435vw + 3.38843px)}",
+                                "",
+                              ],
+                            ],
+                          }
+                        }
+                      />
+                    </span>
+                  </div>
+                  <br />
+                  <div
+                    className="google"
+                  >
+                    <button
+                      disabled={true}
+                      onClick={[Function]}
+                      onMouseDown={[Function]}
+                      onMouseEnter={[Function]}
+                      onMouseLeave={[Function]}
+                      onMouseUp={[Function]}
+                      style={
+                        Object {
+                          "alignItems": "center",
+                          "backgroundColor": "#fff",
+                          "border": "1px solid transparent",
+                          "borderRadius": 2,
+                          "boxShadow": "0 2px 2px 0 rgba(0, 0, 0, .24), 0 0 1px 0 rgba(0, 0, 0, .24)",
+                          "color": "rgba(0, 0, 0, .54)",
+                          "display": "inline-flex",
+                          "fontFamily": "Roboto, sans-serif",
+                          "fontSize": 14,
+                          "fontWeight": "500",
+                          "opacity": 0.6,
+                          "padding": 0,
+                        }
+                      }
+                      type="button"
+                    >
+                      <div
+                        style={
+                          Object {
+                            "background": "#fff",
+                            "borderRadius": 2,
+                            "marginRight": 10,
+                            "padding": 10,
+                          }
+                        }
+                      >
+                        <svg
+                          height="18"
+                          width="18"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <g
+                            fill="#000"
+                            fillRule="evenodd"
+                          >
+                            <path
+                              d="M9 3.48c1.69 0 2.83.73 3.48 1.34l2.54-2.48C13.46.89 11.43 0 9 0 5.48 0 2.44 2.02.96 4.96l2.91 2.26C4.6 5.05 6.62 3.48 9 3.48z"
+                              fill="#EA4335"
+                            />
+                            <path
+                              d="M17.64 9.2c0-.74-.06-1.28-.19-1.84H9v3.34h4.96c-.1.83-.64 2.08-1.84 2.92l2.84 2.2c1.7-1.57 2.68-3.88 2.68-6.62z"
+                              fill="#4285F4"
+                            />
+                            <path
+                              d="M3.88 10.78A5.54 5.54 0 0 1 3.58 9c0-.62.11-1.22.29-1.78L.96 4.96A9.008 9.008 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.92-2.26z"
+                              fill="#FBBC05"
+                            />
+                            <path
+                              d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.84-2.2c-.76.53-1.78.9-3.12.9-2.38 0-4.4-1.57-5.12-3.74L.97 13.04C2.45 15.98 5.48 18 9 18z"
+                              fill="#34A853"
+                            />
+                            <path
+                              d="M0 0h18v18H0z"
+                              fill="none"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                      <span
+                        style={
+                          Object {
+                            "fontWeight": 500,
+                            "paddingBottom": 10,
+                            "paddingLeft": 0,
+                            "paddingRight": 10,
+                            "paddingTop": 10,
+                          }
+                        }
+                      >
+                        SIGN IN WITH GOOGLE
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-item-114 MuiGrid-grid-md-6-175 MuiGrid-grid-lg-6-189 grid-register"
+            id="login-form"
+          >
+            <form
+              method="post"
+            >
+              <div
+                className="MuiFormControl-root-210 textField"
+              >
+                <label
+                  className="MuiFormLabel-root-225 MuiFormLabel-required-230 MuiInputLabel-required-218 MuiInputLabel-root-214 MuiInputLabel-formControl-219 MuiInputLabel-animated-222 LoginComponent-floatingLabelFocusStyle-112"
+                  data-shrink={false}
+                  htmlFor="email"
+                >
+                  email
+                  <span
+                    className="MuiFormLabel-asterisk-231"
+                  >
+                     *
+                  </span>
+                </label>
+                <div
+                  className="MuiInputBase-root-95 MuiInput-root-232 MuiInput-underline-236 MuiInputBase-formControl-96 MuiInput-formControl-233"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    className="MuiInputBase-input-105 MuiInput-input-240"
+                    disabled={false}
+                    id="email"
+                    name="email"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={true}
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div
+                className="MuiFormControl-root-210 textField"
+                maxLength={16}
+                minLength={6}
+              >
+                <label
+                  className="MuiFormLabel-root-225 MuiFormLabel-required-230 MuiInputLabel-required-218 MuiInputLabel-root-214 MuiInputLabel-formControl-219 MuiInputLabel-animated-222 LoginComponent-floatingLabelFocusStyle-112"
+                  data-shrink={false}
+                  htmlFor="password"
+                >
+                  password
+                  <span
+                    className="MuiFormLabel-asterisk-231"
+                  >
+                     *
+                  </span>
+                </label>
+                <div
+                  className="MuiInputBase-root-95 MuiInput-root-232 MuiInput-underline-236 MuiInputBase-formControl-96 MuiInput-formControl-233"
+                  onClick={[Function]}
+                >
+                  <input
+                    aria-invalid={false}
+                    className="MuiInputBase-input-105 MuiInput-input-240 MuiInputBase-inputType-108 MuiInput-inputType-243"
+                    disabled={false}
+                    id="password"
+                    name="password"
+                    onBlur={[Function]}
+                    onChange={[Function]}
+                    onFocus={[Function]}
+                    required={true}
+                    type="password"
+                  />
+                </div>
+              </div>
+              <div
+                className="loadedContent"
+              />
+              <button
+                className="MuiButtonBase-root-271 MuiButton-root-245 MuiButton-text-247 MuiButton-flat-250 button-success"
+                disabled={false}
+                onBlur={[Function]}
+                onContextMenu={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onKeyUp={[Function]}
+                onMouseDown={[Function]}
+                onMouseLeave={[Function]}
+                onMouseUp={[Function]}
+                onTouchEnd={[Function]}
+                onTouchMove={[Function]}
+                onTouchStart={[Function]}
+                tabIndex="0"
+                type="submit"
+              >
+                <span
+                  className="MuiButton-label-246"
+                >
+                  Login
+                </span>
+                <span
+                  className="MuiTouchRipple-root-274"
+                />
+              </button>
+            </form>
+          </div>
+        </div>
+        <p>
+          Don't have an account yet?
+           
+          <a
+            href="/register"
+            id="link"
+          >
+            create one now
+          </a>
+        </p>
+        <p>
+          Forgot your password?
+           
+          <a
+            href="/passwordreset"
+            id="link"
+          >
+            reset now
+          </a>
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-item-114 MuiGrid-grid-md-2-171 MuiGrid-grid-lg-2-185"
+    />
+  </div>
+</div>
+`;
+
+exports[`App render the home page 1`] = `ShallowWrapper {}`;
+
+exports[`App should render without crashing 1`] = `
+<div>
+  <div
+    className="Toastify"
+  />
+  <div
+    className="big-container"
+  >
+    <div
+      className="TopAppBar-root-1"
+    >
+      <header
+        className="MuiPaper-root-19 MuiPaper-elevation4-25 MuiAppBar-root-10 MuiAppBar-positionStatic-14 MuiAppBar-colorPrimary-17 TopAppBar-bar-8"
+      >
+        <div
+          className="MuiToolbar-root-46 MuiToolbar-regular-48 MuiToolbar-gutters-47"
+        >
+          <h6
+            className="MuiTypography-root-50 MuiTypography-h6-67 MuiTypography-colorInherit-79 MuiTypography-noWrap-76 TopAppBar-title-4"
+          >
+            Authors Haven
+          </h6>
+          <div
+            className="TopAppBar-grow-2"
+          />
+          <div
+            className="TopAppBar-search-9"
+          >
+            <div
+              className="TopAppBar-searchIcon-7"
+            >
+              <svg
+                aria-hidden="true"
+                className="MuiSvgIcon-root-86"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                />
+                <path
+                  d="M0 0h24v24H0z"
+                  fill="none"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiInputBase-root-95 TopAppBar-inputRoot-5"
+              onClick={[Function]}
+            >
+              <input
+                className="MuiInputBase-input-105 TopAppBar-inputInput-6"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                placeholder="Search…"
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            className="nav-div"
+          >
+            <a
+              className="nav-links"
+              href="login"
+            >
+              Sign In
+            </a>
+               |   
+            <div
+              className="top-button"
+            >
+              <a
+                className="nav-links"
+                href="register"
+              >
+                  Get Started   
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div
+      className="articles-top"
+    >
+      <div
+        className="best-article"
+      >
+        <div
+          className="inner"
+        >
+          <img
+            className="img-top"
+            src="http://allpicts.in/download/22916/2018/03/Natural_Images_HD_1080p_Download_with_Waterfall_in_Tollymore_Forest_Park-1440x900.jpg/"
+          />
+          <div
+            className="inner"
+          >
+            <div
+              className="inner"
+            >
+              <div
+                className="best-article-card"
+              >
+                <h3>
+                  Facebook's Plan to Fuse its Messaging Apps Is Not about Your Privacy Just follow the Money
+                </h3>
+                <span>
+                  <b>
+                    Author: Yasha Levin in OneZero
+                  </b>
+                </span>
+                <br />
+                <span
+                  className="card-date"
+                >
+                  Created a few hours ago
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div />
+      </div>
+      <div
+        className="top-articles"
+      >
+        <div>
+          No Articles in Authors Haven Yet
+        </div>
+      </div>
+      <div
+        className="top-articles"
+      >
+        <div>
+          No Articles in Authors Haven Yet
+        </div>
+      </div>
+    </div>
+    <div
+      className="articles"
+    >
+      <div
+        className="heading"
+      >
+        <h3>
+          Featured Articles
+        </h3>
+      </div>
+      <hr />
+      <div>
+        No Articles in Authors Haven Yet
+      </div>
+    </div>
+    <div
+      className="articles1"
+    >
+      <div
+        className="heading"
+      >
+        <h3>
+          Popular Articles
+        </h3>
+      </div>
+      <hr />
+      <div>
+        No Articles in Authors Haven Yet
+      </div>
+    </div>
+  </div>
+</div>
+`;
