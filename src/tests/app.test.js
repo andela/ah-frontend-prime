@@ -1,13 +1,13 @@
 import React from "react";
 import renderer from "react-test-renderer";
 import App from "../containers/app";
-import Login from "../components/loginComponent";
+import Login from "../components/login/LoginModal";
+import data from "./mock_data/moxios_mock";
 import { Home } from "../components/home";
 import { shallow } from "enzyme";
-import articles from "./mock_data/moxios_mock";
 
 const props = {
-  articles: articles,
+  articles: data.articles,
   getArticlesAction: jest.fn()
 };
 

@@ -1,14 +1,9 @@
 import { combineReducers } from "redux";
 import authReducer from "./authReducer";
+import loginReducer from "./loginReducer";
 import getArticlesReducer from "./getArticlesReducer";
 
-export const rootReducer = combineReducers({
-  // A blank reducer was added in order for the default snapshot test to pass.
-  // When an actual reducer is created, this would have to be replaced with the
-  // reducer object that was created.
-  blank: function(state, action) {
-    if (state == null) state = [];
-    return state;
-  },
+export default combineReducers({
+  auth_login: loginReducer,
   getArticlesReducer
 });
