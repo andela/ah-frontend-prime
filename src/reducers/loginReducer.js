@@ -5,7 +5,7 @@ const initialState = {
   token: "",
   errors: null,
   isProcessing: null,
-  loginSuccess: false,
+  loginSuccess: false
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -16,7 +16,7 @@ const loginReducer = (state = initialState, action) => {
         isSuccessful: true,
         token: action.payload,
         isProcessing: null,
-        loginSuccess: true,
+        loginSuccess: true
       };
 
     case LOGIN_STARTED: {
@@ -30,7 +30,7 @@ const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         errors: action.payload,
-        isProcessing: null,
+        isProcessing: null
       };
     default:
       return state;
