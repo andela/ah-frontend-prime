@@ -105,9 +105,11 @@ function TopAppBar(props) {
               Sign In
             </a>
             &nbsp;&nbsp; | &nbsp;&nbsp;
-            <a href="register" className="nav-links">
-              Get Started
-            </a>
+            <div className="top-button">
+              <a href="register" className="nav-links">
+                &nbsp;&nbsp;Get Started &nbsp;&nbsp;
+              </a>
+            </div>
           </div>
         </Toolbar>
       </AppBar>

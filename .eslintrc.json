@@ -10,14 +10,15 @@
   },
   "parserOptions": {
     "ecmaFeatures": {
-    "jsx": true
+      "jsx": true
     },
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": [
-    "react"
-  ],
+  "plugins": ["react"],
   "rules": {
+    "no-unused-vars": "off",
+    "no-undef": "off",
+    "no-console": "off"
   }
 }

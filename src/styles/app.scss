@@ -1,3 +1,7 @@
+body {
+  font-family: "Quantico", sans-serif;
+}
+
 h2 {
   color: #1b7999;
   text-align: center;
@@ -149,10 +153,12 @@ a {
 }
 
 .top-button {
+  float: right;
   color: white;
   border-style: solid;
-  border-width: 0.5px;
-  border-color: grey;
+  border-width: 2px;
+  border-color: white;
+  border-radius: 10px;
 }
 
 @media only screen and (max-width: 600px) {
