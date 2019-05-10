@@ -1,2 +1,1 @@
-//add your actions types here
-// export const LOGIN_USER = 'LOGIN_USER';
+export const FETCH_ARTICLES_SUCCESS = "FETCH_ARTICLES_SUCCESS";

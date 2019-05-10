@@ -1,0 +1,178 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App render the home page 1`] = `ShallowWrapper {}`;
+
+exports[`App render the login component 1`] = `
+<div>
+  <h2>
+    Login
+  </h2>
+</div>
+`;
+
+exports[`App should render without crashing 1`] = `
+<div
+  className="big-container"
+>
+  <div
+    className="TopAppBar-root-1"
+  >
+    <header
+      className="MuiPaper-root-19 MuiPaper-elevation4-25 MuiAppBar-root-10 MuiAppBar-positionStatic-14 MuiAppBar-colorPrimary-17 TopAppBar-bar-8"
+    >
+      <div
+        className="MuiToolbar-root-46 MuiToolbar-regular-48 MuiToolbar-gutters-47"
+      >
+        <h6
+          className="MuiTypography-root-50 MuiTypography-h6-67 MuiTypography-colorInherit-79 MuiTypography-noWrap-76 TopAppBar-title-4"
+        >
+          Authors Haven
+        </h6>
+        <div
+          className="TopAppBar-grow-2"
+        />
+        <div
+          className="TopAppBar-search-9"
+        >
+          <div
+            className="TopAppBar-searchIcon-7"
+          >
+            <svg
+              aria-hidden="true"
+              className="MuiSvgIcon-root-86"
+              focusable="false"
+              role="presentation"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+              />
+              <path
+                d="M0 0h24v24H0z"
+                fill="none"
+              />
+            </svg>
+          </div>
+          <div
+            className="MuiInputBase-root-95 TopAppBar-inputRoot-5"
+            onClick={[Function]}
+          >
+            <input
+              className="MuiInputBase-input-105 TopAppBar-inputInput-6"
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Search…"
+              type="text"
+            />
+          </div>
+        </div>
+        <div
+          className="nav-div"
+        >
+          <a
+            className="nav-links"
+            href="login"
+          >
+            Sign In
+          </a>
+             |   
+          <a
+            className="nav-links"
+            href="register"
+          >
+            Get Started
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
+  <div
+    className="articles-top"
+  >
+    <div
+      className="best-article"
+    >
+      <div
+        className="inner"
+      >
+        <img
+          className="img-top"
+          src="http://allpicts.in/download/22916/2018/03/Natural_Images_HD_1080p_Download_with_Waterfall_in_Tollymore_Forest_Park-1440x900.jpg/"
+        />
+        <div
+          className="inner"
+        >
+          <div
+            className="inner"
+          >
+            <div
+              className="best-article-card"
+            >
+              <h3>
+                Facebook's Plan to Fuse its Messaging Apps Is Not about Your Privacy Just follow the Money
+              </h3>
+              <span>
+                <b>
+                  Author: Yasha Levin in OneZero
+                </b>
+              </span>
+              <br />
+              <span
+                className="card-date"
+              >
+                Created a few hours ago
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div />
+    </div>
+    <div
+      className="top-articles"
+    >
+      <div>
+        No Articles in Authors Haven Yet
+      </div>
+    </div>
+    <div
+      className="top-articles"
+    >
+      <div>
+        No Articles in Authors Haven Yet
+      </div>
+    </div>
+  </div>
+  <div
+    className="articles"
+  >
+    <div
+      className="heading"
+    >
+      <h3>
+        Featured Articles
+      </h3>
+    </div>
+    <hr />
+    <div>
+      No Articles in Authors Haven Yet
+    </div>
+  </div>
+  <div
+    className="articles1"
+  >
+    <div
+      className="heading"
+    >
+      <h3>
+        Popular Articles
+      </h3>
+    </div>
+    <hr />
+    <div>
+      No Articles in Authors Haven Yet
+    </div>
+  </div>
+</div>
+`;

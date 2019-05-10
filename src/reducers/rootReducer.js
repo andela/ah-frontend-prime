@@ -1,5 +1,6 @@
 import { combineReducers } from "redux";
 import authReducer from "./authReducer";
+import getArticlesReducer from "./getArticlesReducer";
 
 export const rootReducer = combineReducers({
   // A blank reducer was added in order for the default snapshot test to pass.
@@ -8,5 +9,6 @@ export const rootReducer = combineReducers({
   blank: function(state, action) {
     if (state == null) state = [];
     return state;
-  }
+  },
+  getArticlesReducer
 });
