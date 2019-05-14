@@ -49,7 +49,6 @@ describe("login container", () => {
     wrapper.instance().handleChange(event);
     expect(wrapper.instance().state.password).toBe("pass123");
   });
-  
 
   it("should handle the onSubmit event", () => {
     const props = {

@@ -5,5 +5,6 @@ import getArticlesReducer from "./getArticlesReducer";
 
 export default combineReducers({
   auth_login: loginReducer,
-  getArticlesReducer
+  getArticlesReducer,
+  auth: authReducer
 });

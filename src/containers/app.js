@@ -10,10 +10,13 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <ToastContainer />
-        <Routes />
+        <div>
+          <ToastContainer />
+          <Routes />
+        </div>
       </Provider>
     );
   }
 }
+
 export default App;

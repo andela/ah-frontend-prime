@@ -49,7 +49,7 @@ export class LoginContainer extends Component {
         password: this.state.password
       }
     };
-    this.props.userLoginRequest(data, this.props);
+    this.props.userLoginRequest(data);
   }
 
   render() {

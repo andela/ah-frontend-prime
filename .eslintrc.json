@@ -15,7 +15,9 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "no-unused-vars": "off",
     "no-undef": "off",

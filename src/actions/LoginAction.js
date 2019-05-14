@@ -10,7 +10,7 @@ export const successLogin = data => {
   };
 };
 
-export const userLoginRequest = (userData, props) => async dispatch => {
+export const userLoginRequest = userData => async dispatch => {
   toast.dismiss();
   dispatch({
     type: LOGIN_STARTED
