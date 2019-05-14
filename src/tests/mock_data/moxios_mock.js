@@ -30,7 +30,20 @@ const data = {
       body:
         "est rerum tempore vitae\nsequi sint nihil reprehenderit dolor beatae ea dolores neque\nfugiat blanditiis voluptate porro vel nihil molestiae ut reiciendis\nqui aperiam non debitis possimus qui neque nisi nulla"
     }
-  ]
+  ],
+  data: {
+    auth_token: {
+      email: "cartpix@gmail.com",
+      username: "Kisekka David",
+      token: "token"
+    }
+  },
+  data2: {
+    auth_token: "Kindly log In using the application."
+  },
+  errors: {
+    errors: "Invalid token"
+  }
 };
 
 export default data;

@@ -5,6 +5,7 @@ import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import "../../styles/register.scss";
+import SocialAuthContainer from "../../containers/SocialAuthContainer";
 
 const styles = themes => ({
   floatingLabelFocusStyle: {
@@ -41,33 +42,7 @@ const LoginComponent = props => {
             <Grid container spacing={24}>
               <Grid item lg={6} md={6}>
                 <div className="button-collective">
-                  <Button className="face-book">
-                    <img
-                      src="https://img.icons8.com/color/96/000000/facebook.png"
-                      width="=40px"
-                      height="40px"
-                      alt="facebook"
-                    />
-                    Login with Facebook
-                  </Button>
-                  <Button className="twitter">
-                    <img
-                      src="https://img.icons8.com/color/96/000000/twitter-circled.png"
-                      width="=40px"
-                      height="40px"
-                      alt="twitter"
-                    />
-                    Login with Twitter
-                  </Button>
-                  <Button className="google">
-                    <img
-                      src="https://img.icons8.com/color/96/000000/google-logo.png"
-                      width="=40px"
-                      height="40px"
-                      alt="google"
-                    />
-                    Login with Google
-                  </Button>
+                  <SocialAuthContainer />
                 </div>
               </Grid>
               <Grid
@@ -107,7 +82,6 @@ const LoginComponent = props => {
                     value={password}
                     onChange={handleChange}
                   />
-
                   <Loader loaded={!isProcessing} />
                   <Button type="submit" className="button-success">
                     Login

@@ -7,6 +7,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Loader from "react-loader";
 import "../styles/register.scss";
+import SocialAuthContainer from "../containers/SocialAuthContainer";
 
 const styles = themes => ({
   floatingLabelFocusStyle: {
@@ -43,33 +44,7 @@ export const RegisterComponent = props => {
             <Grid container spacing={24}>
               <Grid item lg={6} md={6}>
                 <div className="button-collective">
-                  <Button className="face-book">
-                    <img
-                      src="https://img.icons8.com/color/96/000000/facebook.png"
-                      width="=40px"
-                      height="40px"
-                      alt="facebook"
-                    />
-                    Register with Facebook
-                  </Button>
-                  <Button className="twitter">
-                    <img
-                      src="https://img.icons8.com/color/96/000000/twitter-circled.png"
-                      width="=40px"
-                      height="40px"
-                      alt="twitter"
-                    />
-                    Register with Twitter
-                  </Button>
-                  <Button className="google">
-                    <img
-                      src="https://img.icons8.com/color/96/000000/google-logo.png"
-                      width="=40px"
-                      height="40px"
-                      alt="google"
-                    />
-                    Register with Google
-                  </Button>
+                  <SocialAuthContainer />
                 </div>
               </Grid>
               <Grid item lg={6} md={6} sm={12} className="grid-register">
