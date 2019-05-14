@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import LoginContainer from "../containers/Login/LoginContainer";
+import CreateArticleComponent from "../components/articles/createArticleComponent";
+import SingleArticleComponent from "../components/articles/singleArticle";
+import NavBarComponent from "../components/navbar";
 import SocialAuthContainer from "../containers/SocialAuthContainer";
 import PasswordResetEmailContainer from "../containers/passwordResetEmail";
 import PasswordResetContainer from "../containers/passwordReset";
@@ -8,7 +11,8 @@ import Home from "./home";
 import RegisterContainer from "../containers/registerContainer";
 import { ProfilePage } from "../components/userProfile/ProfilePage";
 import EditProfileContainer from "../containers/profile/EditProfileContainer";
-import NavBarComponent from "../components/navbar";
+import UserArticles from "./articles/userArticles";
+import CreateArticlePage from "./articles/createArticlePage";
 
 class Routes extends Component {
   render() {
@@ -32,6 +36,11 @@ class Routes extends Component {
               path="/:token/passwordreset"
               component={PasswordResetContainer}
             />
+
+            <Route path="/create-article" component={CreateArticlePage} />
+            <Route path="/article/:slug" component={SingleArticleComponent} />
+
+            <Route path="/user-articles" component={UserArticles} />
           </Switch>
         </BrowserRouter>
       </div>

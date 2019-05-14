@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "../styles/navbar.scss";
 import BellIcon from "../styles/images/icons8-bell-100.png";
 import SideDrawer from "./sideDrawer";
+import profileImage from "../styles/images/profile.png";
 
 export class NavBarComponent extends React.Component {
   constructor(props) {
@@ -74,16 +75,29 @@ export class NavBarComponent extends React.Component {
                 <img src={BellIcon} id="notification-icon" />
               </li>
               <li className="nav-item">
-                <li className="nav-item">
-                  <Link className="nav-link" to="/profile">
-                    Profile
-                  </Link>
-                </li>
+                <div className="dropdown">
+                  <img className="dropbtn profile-img" src={profileImage} />
+                  <div className="dropdown-content">
+                    <Link className="navlink" to="/profile">
+                      Profile
+                    </Link>
+                    <Link className="navlink" to="/create-article">
+                      Create Article
+                    </Link>
+                    <Link className="navlink" to="/user-articles/">
+                      Your Stories
+                    </Link>
+                    <a href="/" className="navlink" onClick={this.logout}>
+                      Log out
+                    </a>
+                  </div>
+                </div>
               </li>
+
               <li className="nav-item">
-                <a href="/" className="nav-link log-out" onClick={this.logout}>
-                  Log out
-                </a>
+                <div className="dropdown" />
+
+                <div className="dropdown-content" />
               </li>
             </ul>
           ) : (

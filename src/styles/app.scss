@@ -5,6 +5,7 @@ html {
 body {
   font-family: "Quantico", sans-serif;
   height: 100%;
+  font-size: small;
 }
 
 h2 {
@@ -63,30 +64,31 @@ div {
   font-family: "Quantico", sans-serif;
   margin-top: 50px;
   text-align: center;
-  font-size: small;
 }
 
 .links {
   text-decoration: none;
-  color: whitesmoke;
+  color: #000000;
 }
 
 .img-top {
   width: 90%;
   min-width: 200px;
+  max-height: 300px;
 }
 
 .img-tile {
   float: right;
-  width: 27%;
+  max-width: 27%;
+  max-height: 100px;
   margin-left: 1%;
 }
 
 .articles-top {
   width: 90%;
-  font-size: xx-small;
+  min-height: 500px;
+  font-size: small;
   display: block;
-  min-height: 400px;
   margin-left: 5%;
 }
 
@@ -112,7 +114,10 @@ div {
   margin-right: 5%;
   min-width: 270px;
 }
-
+.action-buttons {
+  width: 100%;
+  float: left;
+}
 .heading {
   width: 90%;
   margin-top: 100px;
@@ -152,6 +157,7 @@ div {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .top-button {
@@ -163,15 +169,27 @@ a {
   border-radius: 10px;
 }
 
+@media only screen and (max-width: 769px) {
+  .articles-top {
+    border-style: none;
+  }
+}
+
 @media only screen and (max-width: 600px) {
   .article {
     width: 80%;
     float: none;
     margin-left: 10%;
   }
+  .img-div {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+  }
   .img-tile {
-    margin: 10px 2% 10px 2%;
-    width: 80%;
+    margin: 10px 0 10px 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 300px;
     float: none;
   }
 }

@@ -6,10 +6,14 @@ import { socialAuthReducer } from "./socialAuthReducer";
 import passwordResetReducer from "./passwordResetReducer";
 import passwordChangeReducer from "./passwordChangeReducer";
 import profileReducer from "./profileReducer";
+import getArticleReducer from "./getArticleReducer";
+import createArticleReducer from "./createArticleReducer";
 
 export default combineReducers({
   auth_login: loginReducer,
   getArticlesReducer,
+  getArticleReducer,
+  createArticleReducer,
   auth: authReducer,
   socialAuthReducer: socialAuthReducer,
   passReset: passwordResetReducer,
