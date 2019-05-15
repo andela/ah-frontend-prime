@@ -1,4 +1,4 @@
-import socialAuthReducers from "../../reducers/socialAuthReducer";
+import { socialAuthReducer } from "../../reducers/socialAuthReducer";
 import {
   GOOGLE_FAILURE,
   GOOGLE_LOGIN,
@@ -8,7 +8,7 @@ import {
 
 describe("Social auth Reducer", () => {
   it("should have initial state", () => {
-    expect(socialAuthReducers(undefined, {})).toEqual({
+    expect(socialAuthReducer(undefined, {})).toEqual({
       isAuthenticated: false,
       facebook_login: false,
       google_login: false,
@@ -19,39 +19,35 @@ describe("Social auth Reducer", () => {
 
   it("should update state on google success", () => {
     expect(
-      socialAuthReducers([], { type: GOOGLE_LOGIN, payload: "token" })
+      socialAuthReducer([], {
+        type: GOOGLE_LOGIN,
+        payload: { token: undefined, username: "dave" }
+      })
     ).toEqual({
       google_login: true,
       isAuthenticated: true,
-      payload: "token",
+      payload: "dave",
       token: undefined
     });
   });
 
   it("should update state on facebook success", () => {
     expect(
-      socialAuthReducers([], {
+      socialAuthReducer([], {
         type: FACEBOOK_LOGIN,
-        payload: {
-          data: {
-            auth_token: "auth_token"
-          }
-        }
+        payload: { token: undefined, username: "dave" }
       })
     ).toEqual({
       facebook_login: true,
       isAuthenticated: true,
-      payload: {
-        data: {
-          auth_token: "auth_token"
-        }
-      }
+      payload: "dave",
+      token: undefined
     });
   });
 
   it("should update state on google failure", () => {
     expect(
-      socialAuthReducers([], { type: GOOGLE_FAILURE, payload: "" })
+      socialAuthReducer([], { type: GOOGLE_FAILURE, payload: "" })
     ).toEqual({
       payload: ""
     });
@@ -59,7 +55,7 @@ describe("Social auth Reducer", () => {
 
   it("should update state if there is a FACEBOOK FAILURE", () => {
     expect(
-      socialAuthReducers([], { type: FACEBOOK_FAILURE, payload: "" })
+      socialAuthReducer([], { type: FACEBOOK_FAILURE, payload: "" })
     ).toEqual({
       payload: ""
     });

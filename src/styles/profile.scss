@@ -1,0 +1,40 @@
+.container-profile {
+  padding: 50px 50px 50px 50px;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.img-container {
+  float: right;
+  width: 30%;
+
+  img {
+    width: 80%;
+  }
+}
+
+.update-image {
+  width: 100%;
+}
+.styleme {
+  .update-image {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+  }
+  .upload-button {
+    border: none;
+    margin: 10px 0 0 0;
+  }
+}
+.container-personal-profile {
+  margin-top: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding: 50px 100px 400px 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  .user-details {
+    float: left;
+    width: 70%;
+  }
+}

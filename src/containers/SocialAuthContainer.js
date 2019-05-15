@@ -12,7 +12,8 @@ export class SocialAuthContainer extends Component {
   }
   componentWillReceiveProps(nextProps) {
     if (nextProps.socialAuthState.isAuthenticated) {
-      localStorage.setItem("token", nextProps.socialAuthState.payload);
+      sessionStorage.setItem("token", nextProps.socialAuthState.token);
+      sessionStorage.setItem("username", nextProps.socialAuthState.payload);
       this.props.history.push("/");
     }
   }

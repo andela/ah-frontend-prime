@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`profile container should receive props 1`] = `ShallowWrapper {}`;
+
+exports[`profile container should render without crushing 1`] = `ShallowWrapper {}`;

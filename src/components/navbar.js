@@ -12,8 +12,12 @@ export class NavBarComponent extends React.Component {
     this.state = {
       navBarDrawer: false
     };
+    this.logout = this.logout.bind(this);
   }
-
+  logout() {
+    sessionStorage.clear();
+    window.location.href = "/";
+  }
   toggleDrawer = event => {
     event.preventDefault();
     this.setState(prevState => {
@@ -22,12 +26,13 @@ export class NavBarComponent extends React.Component {
   };
 
   render() {
+    const sessionUser = sessionStorage.getItem("username");
     let sideDrawer;
     if (this.state.navBarDrawer) {
       sideDrawer = <SideDrawer />;
     }
 
-    const { isAuthenticated } = this.props;
+    const { isAuthenticated, isAuthenticatedSocial } = this.props;
     return (
       <div style={{ height: "100%" }}>
         <nav className="navbar navbar-expand-sm ">
@@ -41,12 +46,14 @@ export class NavBarComponent extends React.Component {
                     onClick={this.toggleDrawer}
                     id="nav-icon"
                   />
-                  Author's Haven
+                  <a href="/" className="nav-links">
+                    Author's Haven
+                  </a>
                 </h4>
               </a>
             </li>
           </ul>
-          {isAuthenticated ? (
+          {sessionUser ? (
             <ul className="nav navbar-nav ml-auto">
               <li className="nav-item active">
                 <div className="form-group has-search">
@@ -66,11 +73,17 @@ export class NavBarComponent extends React.Component {
               <li className="nav-item">
                 <img src={BellIcon} id="notification-icon" />
               </li>
-              <li className="nav-item" />
               <li className="nav-item">
-                <div>
-                  <img src="" className="profile-section" />
-                </div>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/profile">
+                    Profile
+                  </Link>
+                </li>
+              </li>
+              <li className="nav-item">
+                <a href="/" className="nav-link log-out" onClick={this.logout}>
+                  Log out
+                </a>
               </li>
             </ul>
           ) : (
@@ -93,11 +106,12 @@ export class NavBarComponent extends React.Component {
     );
   }
 }
-
 NavBarComponent.proptypes = {
-  isAuthenticated: PropTypes.Boolean
+  isAuthenticated: PropTypes.Boolean,
+  isAuthenticatedSocial: PropTypes.Boolean
 };
 const mapStateToProps = state => ({
-  isAuthenticated: state.auth_login.loginSuccess
+  isAuthenticated: state.auth_login.loginSuccess,
+  isAuthenticatedSocial: state.socialAuthReducer.isAuthenticated
 });
 export default connect(mapStateToProps)(NavBarComponent);

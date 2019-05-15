@@ -2,9 +2,10 @@ import { combineReducers } from "redux";
 import authReducer from "./authReducer";
 import loginReducer from "./loginReducer";
 import getArticlesReducer from "./getArticlesReducer";
-import socialAuthReducer from "./socialAuthReducer";
+import { socialAuthReducer } from "./socialAuthReducer";
 import passwordResetReducer from "./passwordResetReducer";
 import passwordChangeReducer from "./passwordChangeReducer";
+import profileReducer from "./profileReducer";
 
 export default combineReducers({
   auth_login: loginReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
   auth: authReducer,
   socialAuthReducer: socialAuthReducer,
   passReset: passwordResetReducer,
-  passChange: passwordChangeReducer
+  passChange: passwordChangeReducer,
+  profileReducer
 });

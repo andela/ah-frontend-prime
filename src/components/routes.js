@@ -6,6 +6,8 @@ import PasswordResetEmailContainer from "../containers/passwordResetEmail";
 import PasswordResetContainer from "../containers/passwordReset";
 import Home from "./home";
 import RegisterContainer from "../containers/registerContainer";
+import { ProfilePage } from "../components/userProfile/ProfilePage";
+import EditProfileContainer from "../containers/profile/EditProfileContainer";
 import NavBarComponent from "../components/navbar";
 
 class Routes extends Component {
@@ -20,6 +22,8 @@ class Routes extends Component {
             <Route exact path="/home" component={Home} />
             <Route path="/login" component={LoginContainer} />
             <Route path="/socialAuth" component={SocialAuthContainer} />
+            <Route path="/profile" component={ProfilePage} />
+            <Route path="/editprofile" component={EditProfileContainer} />
             <Route
               path="/passwordresetemail"
               component={PasswordResetEmailContainer}
