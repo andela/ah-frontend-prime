@@ -3,7 +3,7 @@ import moxios from "moxios";
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import {
-  IS_REGISTERING,
+  IS_LOADING,
   REGISTRATION_ERROR_MESSAGE,
   RIGISTRATION_SUCCESS_MESSAGE
 } from "../../actions/types";
@@ -37,7 +37,7 @@ describe("testing register actions creaters", () => {
       });
     });
     const expectedActions = [
-      { type: IS_REGISTERING },
+      { type: IS_LOADING },
       { type: RIGISTRATION_SUCCESS_MESSAGE, payload: mockData }
     ];
 
@@ -72,7 +72,7 @@ describe("testing register actions creaters", () => {
 
     const expectedActions = [
       {
-        type: IS_REGISTERING
+        type: IS_LOADING
       },
       { type: REGISTRATION_ERROR_MESSAGE, payload: mockData }
     ];

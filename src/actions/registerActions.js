@@ -1,7 +1,7 @@
 import {
-  IS_REGISTERING,
   REGISTRATION_ERROR_MESSAGE,
-  RIGISTRATION_SUCCESS_MESSAGE
+  RIGISTRATION_SUCCESS_MESSAGE,
+  IS_LOADING
 } from "../actions/types";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 export const registerUser = userData => async dispatch => {
   toast.dismiss();
   dispatch({
-    type: IS_REGISTERING
+    type: IS_LOADING
   });
   await axios
     .post(

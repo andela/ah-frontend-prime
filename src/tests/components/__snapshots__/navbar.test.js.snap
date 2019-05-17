@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[` navbar component should load other nav elements when a user is not authenticate 1`] = `ShallowWrapper {}`;
+
+exports[` navbar component should render without crashing 1`] = `ShallowWrapper {}`;

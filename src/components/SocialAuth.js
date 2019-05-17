@@ -2,7 +2,6 @@ import React from "react";
 import FacebookLogin from "react-facebook-login";
 import GoogleLogin from "react-google-login";
 import config from "../../src/config.json";
-import color from "@material-ui/core/colors/grey";
 
 export const SocialAuth = props => (
   <div>

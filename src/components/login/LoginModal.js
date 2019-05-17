@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { Link } from "react-router-dom";
 import "../../styles/register.scss";
 import SocialAuthContainer from "../../containers/SocialAuthContainer";
 
@@ -91,15 +92,15 @@ const LoginComponent = props => {
             </Grid>
             <p>
               Don't have an account yet?{" "}
-              <a href="/register" id="link">
+              <Link to="/register" id="link">
                 create one now
-              </a>
+              </Link>
             </p>
             <p>
               Forgot your password?{" "}
-              <a href="/passwordreset" id="link">
+              <Link to="/passwordresetemail" id="link">
                 reset now
-              </a>
+              </Link>
             </p>
           </Paper>
         </Grid>
