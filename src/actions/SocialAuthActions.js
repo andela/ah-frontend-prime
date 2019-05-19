@@ -37,6 +37,7 @@ export const facebooklogin = token => dispatch => {
               hideProgressBar: false
             }
           );
+          sessionStorage.setItem("username", data.data["auth_token"].username);
           dispatch({
             type: FACEBOOK_LOGIN,
             payload: data.data["auth_token"]
@@ -80,6 +81,7 @@ export const googlelogin = token => dispatch => {
               hideProgressBar: false
             }
           );
+          sessionStorage.setItem("username", data.data["auth_token"].username);
           dispatch({
             type: GOOGLE_LOGIN,
             payload: data.data["auth_token"]

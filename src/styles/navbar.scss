@@ -25,9 +25,6 @@
   display: none;
 }
 
-.fa .fa-search {
-}
-
 form {
   input.form-control-search {
     background: white;
@@ -74,6 +71,13 @@ form {
       border-radius: 5px;
       margin-left: 30px;
     }
+    .log-out {
+      border: 1px solid white;
+      border-radius: 5px;
+      margin-left: 30px;
+      color: white;
+      background-color: inherit;
+    }
   }
 }
 
@@ -87,7 +91,6 @@ form {
           font-size: 15px;
         }
       }
-
     }
   }
 }
@@ -107,17 +110,12 @@ form {
 }
 
 @media (max-width: 995px) {
-  .navbar {
-    //max-height: 70px;
-  }
   .nav {
     display: inline;
-    //width: 100%;
   }
 }
 
-@media(max-width: 534px) {
-
+@media (max-width: 534px) {
   #nav-icon {
     display: inline;
     margin-right: 100px;

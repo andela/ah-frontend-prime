@@ -20,8 +20,10 @@ export const userLoginRequest = userData => async dispatch => {
       "https://ah-backend-prime-staging.herokuapp.com/api/v1/users/login/",
       userData
     );
-    dispatch(successLogin(response));
+
     sessionStorage.setItem("token", response.data.user.token);
+    sessionStorage.setItem("username", response.data.user.username);
+    dispatch(successLogin(response));
     toast.success(`Welcome ${response.data.user.username}. Login Successful`, {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 2000,

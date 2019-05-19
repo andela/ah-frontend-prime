@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`edit profile container tests should render without crushing 1`] = `ShallowWrapper {}`;
+
+exports[`profileComponent tests should render without crushing 1`] = `ShallowWrapper {}`;

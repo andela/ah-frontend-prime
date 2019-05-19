@@ -6,7 +6,8 @@ let wrapper;
 let instance;
 const props = {
   navBarDrawer: false,
-  toggleDrawer: jest.fn()
+  toggleDrawer: jest.fn(),
+  logout: jest.fn()
 };
 describe(" navbar component", () => {
   beforeEach(() => {
@@ -31,10 +32,14 @@ describe(" navbar component", () => {
     instance.toggleDrawer(e);
     expect(props.navBarDrawer).toEqual(false);
   });
-  it("should load other nav elements when a user is not authenticate", () => {
+  it("should load other nav elements when a user is not authenticated", () => {
     wrapper.setProps({
       isAuthenticated: '<ul className="nav navbar-nav ml-auto"> </ul>'
     });
     expect(wrapper).toMatchSnapshot();
+  });
+  it("should handle onclick event", () => {
+    instance.logout();
+    expect(props.logout).toBeCalledTimes(0);
   });
 });

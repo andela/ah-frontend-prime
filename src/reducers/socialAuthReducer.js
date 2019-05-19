@@ -13,15 +13,15 @@ const initialState = {
   token: ""
 };
 
-const socialAuthReducer = (state = initialState, action) => {
+export const socialAuthReducer = (state = initialState, action) => {
   switch (action.type) {
     case FACEBOOK_LOGIN:
       return {
         ...state,
         isAuthenticated: true,
         facebook_login: true,
-        token: action.token,
-        payload: action.payload
+        token: action.payload.token,
+        payload: action.payload.username
       };
     case FACEBOOK_FAILURE:
       return {
@@ -33,8 +33,8 @@ const socialAuthReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: true,
         google_login: true,
-        token: action.token,
-        payload: action.payload
+        token: action.payload.token,
+        payload: action.payload.username
       };
     case GOOGLE_FAILURE:
       return {
@@ -45,5 +45,3 @@ const socialAuthReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-export default socialAuthReducer;
