@@ -2,7 +2,11 @@ import {
   PROFILE_FETCHING,
   PROFILE_FETCH_FAILED,
   PROFILE_FETCHED,
-  PROFILE_EDIT_SUCCESS
+  PROFILE_EDIT_SUCCESS,
+  FOLLOW_SUCCESS,
+  FOLLOW_FAILURE,
+  UNFOLLOW_FAILURE,
+  UNFOLLOW_SUCCESS
 } from "../actions/types";
 
 const initialState = {
@@ -10,7 +14,10 @@ const initialState = {
   isLoading: false,
   message: null,
   isUpdating: false,
-  upDateSuccess: false
+  upDateSuccess: false,
+  followers_no: 0,
+  following_no: 0,
+  isfollowing: false
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -21,13 +28,14 @@ const profileReducer = (state = initialState, action) => {
         profile: action.payload,
         isLoading: false,
         isUpdating: false,
-        message: true
+        message: true,
+        isfollowing: action.payload.following
       };
     case PROFILE_FETCHING:
       return {
         ...state,
         isLoading: true,
-        isUpdating: false,
+        isUpdating: false
       };
     case PROFILE_EDIT_SUCCESS:
       return {
@@ -42,6 +50,31 @@ const profileReducer = (state = initialState, action) => {
         ...state,
         message: action.payload
       };
+    case FOLLOW_SUCCESS:
+      return {
+        ...state,
+        isfollowing: "True",
+        message: action.payload
+      };
+    case FOLLOW_FAILURE:
+      return {
+        ...state,
+        isfollowing: "False",
+        message: action.payload
+      };
+    case UNFOLLOW_SUCCESS:
+      return {
+        ...state,
+        isfollowing: "False",
+        message: action.payload
+      };
+    case UNFOLLOW_FAILURE:
+      return {
+        ...state,
+        isfollowing: "True",
+        message: action.payload
+      };
+
     default:
       return state;
   }

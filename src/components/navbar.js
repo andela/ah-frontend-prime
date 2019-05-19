@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../styles/navbar.scss";
 import BellIcon from "../styles/images/icons8-bell-100.png";
 import SideDrawer from "./sideDrawer";
@@ -33,7 +33,6 @@ export class NavBarComponent extends React.Component {
       sideDrawer = <SideDrawer />;
     }
 
-    const { isAuthenticated, isAuthenticatedSocial } = this.props;
     return (
       <div style={{ height: "100%" }}>
         <nav className="navbar navbar-expand-sm ">
@@ -78,9 +77,12 @@ export class NavBarComponent extends React.Component {
                 <div className="dropdown">
                   <img className="dropbtn profile-img" src={profileImage} />
                   <div className="dropdown-content">
-                    <Link className="navlink" to="/profile">
+                    <a
+                      className="navlink"
+                      href={`/profile/${sessionStorage.getItem("username")}`}
+                    >
                       Profile
-                    </Link>
+                    </a>
                     <Link className="navlink" to="/create-article">
                       Create Article
                     </Link>
@@ -92,12 +94,6 @@ export class NavBarComponent extends React.Component {
                     </a>
                   </div>
                 </div>
-              </li>
-
-              <li className="nav-item">
-                <div className="dropdown" />
-
-                <div className="dropdown-content" />
               </li>
             </ul>
           ) : (
@@ -128,4 +124,4 @@ const mapStateToProps = state => ({
   isAuthenticated: state.auth_login.loginSuccess,
   isAuthenticatedSocial: state.socialAuthReducer.isAuthenticated
 });
-export default connect(mapStateToProps)(NavBarComponent);
+export default withRouter(connect(mapStateToProps)(NavBarComponent));

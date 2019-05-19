@@ -5,15 +5,16 @@ import thunk from "redux-thunk";
 import moxios from "moxios";
 import store from "../../store";
 
-import ProfileContainer, {
-  ProfileContainer as DumpProfileContainer,
+import {
+  UsersProfileContainer as DumpProfileContainer,
   mapStateToProps,
   mapDispatchToProps
-} from "../../containers/profile/ProfileContainer";
+} from "../../containers/profile/UsersProfileContainer";
 
 describe("profile container", () => {
   const initialState = {
-    profile: { isLoading: false, profile: null, message: null }
+    article: {},
+    isfollowing: false
   };
 
   const mockFn = jest.fn();
@@ -29,51 +30,79 @@ describe("profile container", () => {
     moxios.uninstall();
   });
   it("should render without crushing", () => {
-    const wrapper = shallow(
-      <DumpProfileContainer
-        profile={{ username: "ianemma" }}
-        errors={{ error: "error" }}
-        getProfileAction={mockFn}
-        isLoading={{ isLoading: false }}
-      />
-    );
+    const props = {
+      match: {
+        params: "imatiti"
+      },
+      getUsersProfileAction: () => jest.fn(),
+      getUsersFollowers: () => jest.fn(),
+      getUsersFollowing: () => jest.fn()
+    };
+    const wrapper = shallow(<DumpProfileContainer {...props} />);
     expect(wrapper).toMatchSnapshot();
   });
   it("should map state to props", () => {
     const state = {
       profileReducer: {
         profile: null
+      },
+      followsUnfollowsReducer: {
+        followers: []
       }
     };
-    expect(mapStateToProps(state)).toEqual({ profile: null });
+    expect(mapStateToProps(state)).toEqual({ profile: null, followers: [] });
   });
-  it("should match dispatch to props", () => {
-    const dispatch = jest.fn();
-    const initialState = {
-      profileReducer: {
-        profile: null,
-        message: null,
-        isLoading: false
-      }
-    };
-    mapStateToProps(initialState);
-    mapDispatchToProps(dispatch).getProfileAction();
-    expect(mapDispatchToProps(dispatch).getProfileAction()).toEqual(undefined);
-  });
+
   it("should receive props", () => {
-    const wrapper = shallow(
-      <DumpProfileContainer getProfileAction={() => jest.fn()} />
-    );
+    const props = {
+      match: {
+        params: "imatiti"
+      },
+      getUsersProfileAction: () => jest.fn(),
+      getUsersFollowers: () => jest.fn(),
+      getUsersFollowing: () => jest.fn()
+    };
+    const wrapper = shallow(<DumpProfileContainer {...props} />);
     const newProps = {
-        profile: {
-            username: "imatiti",
-            bio: "the fudge",
-            full_name: "fudge supreme",
-            image: "image",
-        }
+      profile: {
+        username: "imatiti",
+        bio: "the fudge",
+        full_name: "fudge supreme",
+        image: "image"
+      }
     };
 
     wrapper.instance().componentWillReceiveProps(newProps);
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("should call followUser function", () => {
+    const props = {
+      match: {
+        params: "imatiti"
+      },
+      getUsersProfileAction: jest.fn(),
+      getUsersFollowers: jest.fn(),
+      getUsersFollowing: jest.fn(),
+      followUser: jest.fn()
+    };
+    const wrapper = shallow(<DumpProfileContainer {...props} />);
+    wrapper.instance().handlefollowUser("david");
+    expect(wrapper.instance().props.followUser).toBeCalled();
+  });
+
+  it("should call unfollowUser function", () => {
+    const props = {
+      match: {
+        params: "imatiti"
+      },
+      getUsersProfileAction: jest.fn(),
+      getUsersFollowers: jest.fn(),
+      getUsersFollowing: jest.fn(),
+      unfollowUser: jest.fn()
+    };
+    const wrapper = shallow(<DumpProfileContainer {...props} />);
+    wrapper.instance().handleunfollowUser("david");
+    expect(wrapper.instance().props.unfollowUser).toBeCalled();
   });
 });

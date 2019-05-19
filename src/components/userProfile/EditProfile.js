@@ -25,7 +25,7 @@ export class EditProfile extends Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.upDateSuccess === true) {
       const { history } = nextProps;
-      history.push("/profile");
+      history.push(`/profile/${sessionStorage.getItem("username")}`);
     }
   }
 

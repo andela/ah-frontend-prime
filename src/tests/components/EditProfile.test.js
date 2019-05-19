@@ -102,7 +102,7 @@ describe("editprofile component success tests", () => {
   });
   it("should redirect on edit success", () => {
     wrapper.setProps({ ...nextProps });
-    expect(props.history.push).toBeCalledWith("/profile");
+    expect(props.history.push).toBeCalledWith("/profile/null");
   });
   it("should map state to props", () => {
     const state = {

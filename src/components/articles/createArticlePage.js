@@ -37,7 +37,6 @@ export class CreateArticlePage extends Component {
         .ref(`images/${files[0].name}`)
         .getDownloadURL()
         .then(url => {
-          console.log(url);
           this.setState({ isUploaded: true, image: url });
         });
     });
