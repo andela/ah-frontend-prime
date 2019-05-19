@@ -1,7 +1,7 @@
 import {
-  IS_REGISTERING,
   REGISTRATION_ERROR_MESSAGE,
-  RIGISTRATION_SUCCESS_MESSAGE
+  RIGISTRATION_SUCCESS_MESSAGE,
+  IS_LOADING
 } from "../actions/types";
 
 const initialState = {
@@ -24,11 +24,10 @@ export default function(state = initialState, actions) {
       return {
         ...state,
         error: actions.payload,
-
         isRegistering: false,
         isLoginSuccess: false
       };
-    case IS_REGISTERING:
+    case IS_LOADING:
       return {
         ...state,
         isRegistering: true

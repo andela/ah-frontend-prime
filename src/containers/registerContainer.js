@@ -68,6 +68,7 @@ export class RegisterContainer extends Component {
 
   render() {
     const { username, password, email, errors } = this.state;
+    const { error } = this.props;
     return (
       <div>
         <RegisterComponent
@@ -78,7 +79,7 @@ export class RegisterContainer extends Component {
           errors={errors}
           handleOnChange={this.handleOnchange}
           handleOnSubmit={this.handleOnSubmit}
-          error_message={this.props.error}
+          error_message={error}
         />
       </div>
     );

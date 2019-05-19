@@ -1,9 +1,9 @@
 import React from "react";
 import authReducer from "../../reducers/authReducer";
 import {
-  IS_REGISTERING,
   REGISTRATION_ERROR_MESSAGE,
-  RIGISTRATION_SUCCESS_MESSAGE
+  RIGISTRATION_SUCCESS_MESSAGE,
+  IS_LOADING
 } from "../../actions/types";
 
 const initialState = {
@@ -57,7 +57,7 @@ describe("authreducer", () => {
   });
   it("should handle IS_REGISTERING ", () => {
     const isRegistering = {
-      type: IS_REGISTERING
+      type: IS_LOADING
     };
     const newState = authReducer(initialState, isRegistering);
     expect(newState).toEqual({ ...initialState, isRegistering: true });

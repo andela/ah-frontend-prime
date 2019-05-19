@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../styles/app.scss";
-import TopAppBar from "../components/header";
 import { getArticlesAction } from "../actions/getArticles";
 
 export class Home extends Component {
@@ -39,7 +38,6 @@ export class Home extends Component {
     );
     return (
       <div className="big-container">
-        <TopAppBar />
         <div className="articles-top">
           <div className="best-article">
             <div className="inner">

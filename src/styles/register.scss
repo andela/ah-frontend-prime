@@ -32,7 +32,7 @@
         font-weight: 500;
         font-size: 14px;
         border-radius: 5px;
-        font-family: Quantico;
+        font-family: Quantico, "sans-serif";
         text-align: left;
         height: 50px;
         background: #ffff;
@@ -44,7 +44,7 @@
         box-shadow: none !important;
         border-radius: 5px !important;
         padding-left: 60px !important;
-        font-family: Quantico !important;
+        font-family: Quantico, "sans-serif" !important;
         color: #000000 !important;
       }
     }
@@ -86,7 +86,6 @@
       text-align: left;
       font-size: 13px;
       padding-left: 27px;
-      margin-top: -10px;
     }
   }
 
@@ -152,50 +151,50 @@
     }
   }
 
-@media (max-width: 768px) {
-  #registerForm {
-    width: 85% !important;
-    margin-left: 70px !important;
-  }
-  form {
-    .textField {
+  @media (max-width: 768px) {
+    #registerForm {
+      width: 85% !important;
+      margin-left: 70px !important;
+    }
+    form {
+      .textField {
+        width: 93% !important;
+      }
+    }
+    .button-success {
       width: 93% !important;
     }
   }
-  .button-success {
-    width: 93% !important;
-  }
-}
 
-@media (max-width: 360px) {
-  #registerForm {
-    width: 100% !important;
-    margin-left: 30px !important;
-  }
-  form {
-    .textField {
+  @media (max-width: 360px) {
+    #registerForm {
+      width: 100% !important;
+      margin-left: 30px !important;
+    }
+    form {
+      .textField {
+        width: 150% !important;
+      }
+    }
+    .button-success {
       width: 150% !important;
     }
   }
-  .button-success {
-    width: 150% !important;
-  }
-}
 
-@media (max-width: 414px) {
-  #registerForm {
-    width: 100% !important;
-    margin-left: 30px !important;
-  }
-  form {
-    .textField {
+  @media (max-width: 414px) {
+    #registerForm {
+      width: 100% !important;
+      margin-left: 30px !important;
+    }
+    form {
+      .textField {
+        width: 150% !important;
+      }
+    }
+    .button-success {
       width: 150% !important;
     }
   }
-  .button-success {
-    width: 150% !important;
-  }
-}
   @media (max-width: 378px) {
     .button-collective {
       border-right: 0px;
