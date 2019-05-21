@@ -2,19 +2,10 @@ import React from "react";
 import renderer from "react-test-renderer";
 import App from "../containers/app";
 import LoginComponent from "../components/login/LoginModal";
-import { Home } from "../components/home";
-import { shallow } from "enzyme";
 import data from "./mock_data/moxios_mock";
-import configureMockStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import store from "../store";
 import { BrowserRouter, Route } from "react-router-dom";
-import { SocialAuth } from "../components/SocialAuth";
-
-const props = {
-  articles: data.articles,
-  getArticlesAction: jest.fn()
-};
 
 describe("login Component", () => {
   const script = document.createElement("script");
@@ -43,10 +34,5 @@ describe("App", () => {
       )
       .toJSON();
     expect(tree).toMatchSnapshot();
-  });
-
-  it("render the home page", () => {
-    const wrapper = shallow(<Home {...props} />);
-    expect(wrapper).toMatchSnapshot();
   });
 });

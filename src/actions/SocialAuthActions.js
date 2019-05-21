@@ -38,6 +38,7 @@ export const facebooklogin = token => dispatch => {
             }
           );
           sessionStorage.setItem("username", data.data["auth_token"].username);
+          sessionStorage.setItem("email", data.data["auth_token"].email);
           dispatch({
             type: FACEBOOK_LOGIN,
             payload: data.data["auth_token"]
@@ -82,6 +83,7 @@ export const googlelogin = token => dispatch => {
             }
           );
           sessionStorage.setItem("username", data.data["auth_token"].username);
+          sessionStorage.setItem("email", data.data["auth_token"].email);
           dispatch({
             type: GOOGLE_LOGIN,
             payload: data.data["auth_token"]

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../styles/app.scss";
+import moment from "moment";
+import { Link } from "react-router-dom";
 import { getArticlesAction } from "../actions/getArticles";
 
 export class Home extends Component {
@@ -9,26 +11,53 @@ export class Home extends Component {
   }
 
   render() {
-    const articles = this.props.articles;
+    const { articles } = this.props;
     const articleList = articles.length ? (
       articles.map(article => {
         return (
-          <div className="article" key={article.id}>
+          <div className="article" key={article.slug}>
             <div className="inner">
-              <div className="article-card">
-                <h3>{article.title.substring(0, 30)} ...</h3>
-                <p>{article.body.substring(0, 60)} ...</p>
-                <span>
-                  <b>Author: Baba Polly</b>
-                </span>
-                <br />
-                <span className="card-date">
-                  Created on Tue Jan 19 at 19:44
-                </span>
-              </div>
-              <div>
-                <img src={article.image} className="img-tile" />
-              </div>
+              <Link
+                className="links"
+                to={{
+                  pathname: "/article/" + article.slug
+                }}
+              >
+                <div className="article-card">
+                  <h3>{article.title.substring(0, 30)} ...</h3>
+                  <p>
+                    <b>{article.description.substring(0, 60)} ...</b>
+                  </p>
+                  <span>
+                    <b>Author: {article.author.username}</b>
+                  </span>
+                  <br />
+
+                  <span className="card-date">
+                    Created at{" "}
+                    {moment(article.createdAt).format(
+                      "h:mm:ss a [on] MMMM Do YYYY."
+                    )}
+                  </span>
+                  <br />
+                  <p>
+                    <b>{article.reading_time}</b>
+                  </p>
+                </div>
+
+                <div>
+                  <img
+                    src={
+                      article.image
+                        ? article.image
+                        : "https://previews.123rf.com/images/twindesigner/twindesigner1708/twin" +
+                          "designer170800135/84202763-ah-brush-letter-logo-design-with-black-" +
+                          "circle-creative-brushed-letters-icon-logo-.jpg"
+                    }
+                    className="img-tile"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
         );

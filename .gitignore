@@ -2,7 +2,7 @@
 /.idea/
 coverage/
 package-lock.json
-dist/
-src/tests/__snapshots__/*
+dist/*
+*/__snapshots__/*
 .DS_Store
 src/.DS_Store/*

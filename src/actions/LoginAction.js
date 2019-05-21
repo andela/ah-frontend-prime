@@ -23,7 +23,10 @@ export const userLoginRequest = userData => async dispatch => {
 
     sessionStorage.setItem("token", response.data.user.token);
     sessionStorage.setItem("username", response.data.user.username);
+    sessionStorage.setItem("email", response.data.user.email);
+
     dispatch(successLogin(response));
+
     toast.success(`Welcome ${response.data.user.username}. Login Successful`, {
       position: toast.POSITION.TOP_RIGHT,
       autoClose: 2000,

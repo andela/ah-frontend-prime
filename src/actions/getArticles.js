@@ -1,13 +1,19 @@
 import axios from "axios";
 import { FETCH_ARTICLES_SUCCESS } from "./types";
 
-export const getArticlesAction = () => dispatch => {
+export const getArticlesAction = (kwargs = " ") => dispatch => {
   return axios
-    .get("https://my-json-server.typicode.com/patrickf949/demo/posts")
+    .get(
+      "https://ah-backend-prime-staging.herokuapp.com/api/v1/articles/" + kwargs
+    )
     .then(response => {
-      dispatch({
-        type: FETCH_ARTICLES_SUCCESS,
-        payload: response.data
-      });
+      dispatch(fetchArticlesSuccess(response.data.results));
     });
+};
+
+const fetchArticlesSuccess = payload => {
+  return {
+    type: FETCH_ARTICLES_SUCCESS,
+    payload: payload
+  };
 };

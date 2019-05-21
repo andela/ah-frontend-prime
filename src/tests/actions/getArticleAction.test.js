@@ -1,15 +1,15 @@
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
-import { FETCH_ARTICLES_SUCCESS } from "../../actions/types";
-import { getArticlesAction } from "../../actions/getArticles";
+import { FETCH_ARTICLE_SUCCESS } from "../../actions/types";
+import { getArticleAction } from "../../actions/getArticle";
 import data from "../mock_data/moxios_mock";
 
 const middleWare = [thunk];
 
 const mockStore = configureStore(middleWare);
 
-describe("Action for getting Articles", () => {
+describe("Action for getting Article", () => {
   beforeEach(() => {
     moxios.install();
   });
@@ -18,22 +18,22 @@ describe("Action for getting Articles", () => {
     moxios.uninstall();
   });
 
-  it("Should fetch articles", () => {
+  it("Should fetch an article", () => {
     const store = mockStore({});
     moxios.wait(() => {
       const requestM = moxios.requests.mostRecent();
       requestM.respondWith({
         status: 200,
-        response: { results: data.articles }
+        response: data.article
       });
     });
     const expectedAction = [
       {
-        type: FETCH_ARTICLES_SUCCESS,
-        payload: data.articles
+        type: FETCH_ARTICLE_SUCCESS,
+        payload: data.article
       }
     ];
-    return store.dispatch(getArticlesAction()).then(() => {
+    return store.dispatch(getArticleAction()).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
     });
   });
