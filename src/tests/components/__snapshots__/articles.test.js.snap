@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article Components renders the create article page 1`] = `ShallowWrapper {}`;
+
+exports[`Article Components renders the single article page 1`] = `ShallowWrapper {}`;
+
+exports[`Article Components renders the single article page without an article 1`] = `ShallowWrapper {}`;
+
+exports[`Article Components renders the single article page without an article image 1`] = `ShallowWrapper {}`;
+
+exports[`Article Components should not regress 1`] = `ShallowWrapper {}`;
+
+exports[`Article Components should render the home page 1`] = `ShallowWrapper {}`;

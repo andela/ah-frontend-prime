@@ -9,10 +9,10 @@ import PasswordResetEmailContainer from "../containers/passwordResetEmail";
 import PasswordResetContainer from "../containers/passwordReset";
 import Home from "./home";
 import RegisterContainer from "../containers/registerContainer";
-import { ProfilePage } from "../components/userProfile/ProfilePage";
 import EditProfileContainer from "../containers/profile/EditProfileContainer";
 import UserArticles from "./articles/userArticles";
 import CreateArticlePage from "./articles/createArticlePage";
+import UsersProfileContainer from "../containers/profile/UsersProfileContainer";
 
 class Routes extends Component {
   render() {
@@ -26,7 +26,6 @@ class Routes extends Component {
             <Route exact path="/home" component={Home} />
             <Route path="/login" component={LoginContainer} />
             <Route path="/socialAuth" component={SocialAuthContainer} />
-            <Route path="/profile" component={ProfilePage} />
             <Route path="/editprofile" component={EditProfileContainer} />
             <Route
               path="/passwordresetemail"
@@ -41,6 +40,12 @@ class Routes extends Component {
             <Route path="/article/:slug" component={SingleArticleComponent} />
 
             <Route path="/user-articles" component={UserArticles} />
+            <Route
+              path="/profile/:username"
+              exact
+              component={UsersProfileContainer}
+            />
+            <Route path="/editprofile" component={EditProfileContainer} />
           </Switch>
         </BrowserRouter>
       </div>

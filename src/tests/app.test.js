@@ -7,6 +7,11 @@ import { Provider } from "react-redux";
 import store from "../store";
 import { BrowserRouter, Route } from "react-router-dom";
 
+const props = {
+  articles: data.articles,
+  getArticlesAction: jest.fn()
+};
+
 describe("login Component", () => {
   const script = document.createElement("script");
   script.type = "text/javascript";

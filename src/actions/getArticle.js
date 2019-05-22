@@ -1,5 +1,6 @@
 import axios from "axios";
 import { FETCH_ARTICLE_SUCCESS } from "./types";
+import { getUsersProfileAction } from "./profileActions";
 
 export const getArticleAction = slug => dispatch => {
   return axios
@@ -8,6 +9,9 @@ export const getArticleAction = slug => dispatch => {
     )
     .then(response => {
       dispatch(fetchArticlesSuccess(response.data));
+      const username = response.data.article.author.username;
+      sessionStorage.setItem("userview_name", username);
+      dispatch(getUsersProfileAction(username));
     });
 };
 

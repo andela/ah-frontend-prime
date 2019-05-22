@@ -57,7 +57,6 @@ describe("Action for creating Articles", () => {
         )
       )
       .then(() => {
-        console.log("PASS ", store.getActions());
         expect(store.getActions()).toEqual(expectedAction);
       });
   });

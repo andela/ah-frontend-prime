@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import moment from "moment";
 import { Link } from "react-router-dom";
+import FollowsButton from "../FollowsButton";
+import { followUser, unfollowUser } from "../../actions/profileActions";
 
 import "../../styles/singleArticle.scss";
 import { getArticleAction } from "../../actions/getArticle";
@@ -11,8 +13,23 @@ export class SingleArticleComponent extends Component {
     this.props.getArticleAction(this.props.match.params.slug);
   }
 
+  handlefollowUser = () => {
+    const { followUser } = this.props;
+    const username = sessionStorage.getItem("userview_name");
+    followUser(username);
+  };
+
+  handleunfollowUser = () => {
+    const { unfollowUser } = this.props;
+    const username = sessionStorage.getItem("userview_name");
+    unfollowUser(username);
+  };
+
+  isOwner = username =>
+    username === sessionStorage.getItem("username") ? true : false;
+
   render() {
-    const { article } = this.props;
+    const { article, isfollowing } = this.props;
     const oneArticle = article ? article.article : null;
     const singleArticle = oneArticle ? (
       <div className="container">
@@ -34,8 +51,17 @@ export class SingleArticleComponent extends Component {
                   </div>
                   <div className="article-author">
                     {oneArticle.author.username}
-                    <button className="btn btn-primary follow">follow</button>
-
+                    <div>
+                      {this.isOwner(oneArticle.author.username) ? (
+                        <button>Edit</button>
+                      ) : (
+                        <FollowsButton
+                          followUser={this.handlefollowUser}
+                          unfollowUser={this.handleunfollowUser}
+                          isfollowing={isfollowing === "True" ? true : false}
+                        />
+                      )}
+                    </div>
                     <div className="article-time-stamps">
                       <div>
                         Created at{" "}
@@ -88,10 +114,11 @@ export class SingleArticleComponent extends Component {
 }
 
 export const mapStateToProps = state => ({
-  article: state.getArticleReducer.article
+  article: state.getArticleReducer.article,
+  isfollowing: state.profileReducer.isfollowing
 });
 
 export default connect(
   mapStateToProps,
-  { getArticleAction }
+  { getArticleAction, followUser, unfollowUser }
 )(SingleArticleComponent);

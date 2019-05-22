@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`follow/unfollow button should render without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`follower click should click on a follower 1`] = `ReactWrapper {}`;
+
+exports[`followers and following statistics should render without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`followers list popup should render without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`followers list popup should render without crashing 2`] = `ShallowWrapper {}`;
+
+exports[`following click should click on a user  that is being followed 1`] = `ReactWrapper {}`;
+
+exports[`following list popup should render without crashing 1`] = `ShallowWrapper {}`;
+
+exports[`following list popup should render without crashing 2`] = `ShallowWrapper {}`;

@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-import ProfileContainer from "../../containers/profile/ProfileContainer";
+import UsersProfileContainer from "../../containers/profile/UsersProfileContainer";
 
 export class ProfilePage extends Component {
   render() {
     return (
       <div>
-        <ProfileContainer />
+        <UsersProfileContainer />
       </div>
     );
   }

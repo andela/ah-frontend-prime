@@ -29,6 +29,7 @@ export const facebooklogin = token => dispatch => {
         });
       } else {
         if (data.data["auth_token"].username) {
+          sessionStorage.setItem("username", data.data["auth_token"].username);
           toast.success(
             `Welcome ${data.data["auth_token"].username}. Login Successful`,
             {
@@ -74,6 +75,7 @@ export const googlelogin = token => dispatch => {
         });
       } else {
         if (data.data["auth_token"].username) {
+          sessionStorage.setItem("username", data.data["auth_token"].username);
           toast.success(
             `Welcome ${data.data["auth_token"].username}. Login Successful`,
             {

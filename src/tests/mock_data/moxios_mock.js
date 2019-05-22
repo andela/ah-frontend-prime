@@ -95,6 +95,14 @@ const data = {
       email: "cartpix@gmail.com",
       username: "Kisekka David",
       token: "token"
+    },
+    profile: {
+      message: "You have followed ianemma"
+    }
+  },
+  data3: {
+    profile: {
+      message: "You have unfollowed ianemma"
     }
   },
   data2: {

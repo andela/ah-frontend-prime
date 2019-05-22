@@ -1,6 +1,5 @@
 import { shallow } from "enzyme";
 import React from "react";
-
 import ProfileComponent from "../../components/userProfile/ProfileComponent";
 import EditProfileContainer from "../../containers/profile/EditProfileContainer";
 
@@ -21,7 +20,7 @@ describe("edit profile container tests", () => {
     onSubmit: jest.fn(),
     image: "",
     bio: "",
-    full_name:""
+    full_name: ""
   };
   it("should render without crushing", () => {
     const wrapper = shallow(<EditProfileContainer {...props} />);
