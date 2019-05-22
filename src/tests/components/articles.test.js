@@ -7,6 +7,7 @@ import data from "../mock_data/moxios_mock";
 import { SingleArticleComponent } from "../../components/articles/singleArticle";
 import CreateArticleComponent from "../../components/articles/createArticleComponent";
 import { CreateArticlePage } from "../../components/articles/createArticlePage";
+import { EditArticlePage } from "../../components/articles/editArticlePage";
 
 const props = {
   articles: data.articles,
@@ -77,6 +78,29 @@ describe("Article Components", () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it("renders the edit article page", () => {
+    const event = {
+      preventDefault: () => {},
+      target: {
+        name: "body",
+        value: "This is the body"
+      }
+    };
+    const props = {
+      getArticleAction: jest.fn(),
+      articleCreateEditAction: jest.fn(),
+      match: {
+        params: {
+          slug: "this-is-the-slug"
+        }
+      }
+    };
+    const wrapper = shallow(<EditArticlePage {...props} />);
+    wrapper.instance().onChange(event);
+    wrapper.instance().onSubmit(event);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it("should handle on change", () => {
     const event = {
       preventDefault: () => {},
@@ -117,5 +141,55 @@ describe("Article Components", () => {
       .simulate("click");
 
     expect(props.fetchPrevious).toHaveBeenCalledTimes(0);
+  });
+  it("Edit article page should handle on change", () => {
+    const event = {
+      preventDefault: () => {},
+      target: {
+        name: "body",
+        value: "This is the body"
+      }
+    };
+    const props = {
+      getArticleAction: jest.fn(),
+      articleCreateEditAction: jest.fn(),
+      match: {
+        params: {
+          slug: "this-is-the-slug"
+        }
+      }
+    };
+    const wrapper = shallow(<EditArticlePage {...props} />);
+    wrapper.instance().onChange(event);
+    wrapper.instance().onSubmit(event);
+    wrapper
+      .instance()
+      .componentWillReceiveProps({ article: { article: data.article } });
+
+    expect(wrapper.instance().state.body).toEqual("the new Article");
+  });
+  it("Edit article page should handle in case article is null", () => {
+    const event = {
+      preventDefault: () => {},
+      target: {
+        name: "body",
+        value: "This is the body"
+      }
+    };
+    const props = {
+      getArticleAction: jest.fn(),
+      articleCreateEditAction: jest.fn(),
+      match: {
+        params: {
+          slug: "this-is-the-slug"
+        }
+      }
+    };
+    const wrapper = shallow(<EditArticlePage {...props} />);
+    wrapper.instance().onChange(event);
+    wrapper.instance().onSubmit(event);
+    wrapper.instance().componentWillReceiveProps(null);
+
+    expect(wrapper.instance().state.body).toEqual("This is the body");
   });
 });

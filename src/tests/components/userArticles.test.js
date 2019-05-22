@@ -9,21 +9,38 @@ import store from "../../store";
 import data from "../mock_data/moxios_mock";
 import { BrowserRouter } from "react-router-dom";
 
+const props = {
+  articles: data.articles,
+  getArticlesAction: jest.fn(),
+  deleteArticleAction: jest.fn(),
+  deleteArticle: jest.fn()
+};
+
 describe("user article tests", () => {
-  it("should not regress", () => {
-    const props = {
-      articles: data.articles,
-      getArticlesAction: jest.fn()
+  it("User articles should be tested", () => {
+    const event = {
+      preventDefault: () => {},
+      target: {
+        name: "body",
+        value: "This is the body"
+      }
     };
-    const wrapper = mount(
-      <BrowserRouter>
-        <Provider store={store}>
-          <UserArticles {...props} />
-        </Provider>
-      </BrowserRouter>
-    );
+
+    const wrapper = shallow(<UserArticles {...props} />);
+    wrapper.instance().deleteArticle("slug", event);
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it("Should be able to delete on button click", () => {
+    const wrapper = shallow(<UserArticles {...props} />);
+
+    wrapper
+      .find(".delete")
+      .at(0)
+      .simulate("click", "slug");
+
+    expect(props.deleteArticleAction).toHaveBeenCalled();
   });
 
   it("should map state to props", () => {

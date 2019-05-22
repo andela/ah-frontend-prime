@@ -5,25 +5,44 @@ import { toast } from "react-toastify";
 export const successCreateArticle = data => {
   return {
     type: ARTICLE_SUCCESS,
-    payload: data.article.slug
+    payload: data
   };
 };
 
-export const articleCreateEditAction = (article, url, method, props) => {
+export const articleCreateEditAction = (
+  article,
+  url,
+  method,
+  props,
+  action
+) => {
   return async dispatch => {
     try {
       const response = await axios({
-        method: method,
         url: url,
+        method: method,
         data: article,
         headers: {
           Authorization: `Bearer ${sessionStorage.getItem("token")}`
         }
       });
-
-      toast.dismiss();
       dispatch(successCreateArticle(response.data));
-      props.history.push("/article/" + response.data.article.slug);
+      toast.dismiss();
+      toast.success(
+        `${sessionStorage.getItem("username")} your article has been ${action}`,
+        {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000,
+          hideProgressBar: false,
+          onClose: props.history.push(
+            "/article/" +
+              (response.data.article
+                ? response.data.article.slug
+                : response.data.slug)
+          )
+        }
+      );
+      
     } catch (error) {
       if (error.response) {
         dispatch({

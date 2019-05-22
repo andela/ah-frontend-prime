@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`user article tests should not regress 1`] = `ReactWrapper {}`;
+exports[`user article tests User articles should be tested 1`] = `ShallowWrapper {}`;

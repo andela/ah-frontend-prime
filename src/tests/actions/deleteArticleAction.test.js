@@ -1,9 +1,8 @@
 import configureStore from "redux-mock-store";
 import thunk from "redux-thunk";
 import moxios from "moxios";
-import { FETCH_ARTICLE_SUCCESS } from "../../actions/types";
-import { getArticleAction } from "../../actions/getArticle";
-import data from "../mock_data/moxios_mock";
+import { DELETE_ARTICLE_SUCCESS } from "../../actions/types";
+import { deleteArticleAction } from "../../actions/deleteArticleAction";
 
 const middleWare = [thunk];
 
@@ -18,33 +17,26 @@ describe("Action for getting Article", () => {
     moxios.uninstall();
   });
 
-  it("Should fetch an article", () => {
+  it("Should delete an article", () => {
     const store = mockStore({});
     moxios.wait(() => {
       const requestM = moxios.requests.mostRecent();
       requestM.respondWith({
         status: 200,
         response: {
-          article: data.article
+          message: "Article has been successfully deleted"
         }
       });
     });
     const expectedAction = [
       {
-        type: FETCH_ARTICLE_SUCCESS,
+        type: DELETE_ARTICLE_SUCCESS,
         payload: {
-          article: data.article
+          message: "Article has been successfully deleted"
         }
       }
     ];
-    return store.dispatch(
-      getArticleAction(data.article1, "https://www.makesite.com/", "post", {
-        props: {
-          history: { push: jest.fn() }
-        }
-      })
-    );
-    return store.dispatch(getArticleAction()).then(() => {
+    return store.dispatch(deleteArticleAction()).then(() => {
       expect(store.getActions()).toEqual(expectedAction);
     });
   });

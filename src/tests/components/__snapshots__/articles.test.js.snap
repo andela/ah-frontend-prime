@@ -2,6 +2,8 @@
 
 exports[`Article Components renders the create article page 1`] = `ShallowWrapper {}`;
 
+exports[`Article Components renders the edit article page 1`] = `ShallowWrapper {}`;
+
 exports[`Article Components renders the single article page 1`] = `ShallowWrapper {}`;
 
 exports[`Article Components renders the single article page without an article 1`] = `ShallowWrapper {}`;

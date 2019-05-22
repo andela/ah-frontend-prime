@@ -1,8 +1,14 @@
 import React from "react";
 import "../../styles/createArticles.scss";
 import "../../styles/singleArticle.scss";
+import ReactQuill from "react-quill";
+import { modules, formats } from "./quillModules";
+import "react-quill/dist/quill.snow.css";
+import "react-quill/dist/quill.bubble.css";
+
 const CreateArticleComponent = props => {
-  const { onChange, onSubmit, onUpload, image } = props;
+  const { onChange, onSubmit, onUpload, onBodyChange, image, article, body } = props;
+
   return (
     <div className="container-fluid mt-5">
       <div className="row">
@@ -17,6 +23,7 @@ const CreateArticleComponent = props => {
                 placeholder="title"
                 name="title"
                 id="title"
+                defaultValue={article ? article.title : ""}
               />
             </div>
             <div className="form-group">
@@ -26,15 +33,18 @@ const CreateArticleComponent = props => {
                 placeholder="description"
                 name="description"
                 id="description"
+                defaultValue={article ? article.description : ""}
               />
             </div>
             <div className="form-group">
-              <textarea
-                onChange={onChange}
-                className="form-control"
+              <ReactQuill
+                onChange={onBodyChange}
+                className="text-area"
                 placeholder="Body"
                 name="body"
-                id="body"
+                value={body}
+                formats={formats}
+                modules={modules}
               />
             </div>
             <div className="form-group">
@@ -44,6 +54,13 @@ const CreateArticleComponent = props => {
                 placeholder="tags"
                 name="tags"
                 id="tags"
+                defaultValue={
+                  article
+                    ? article.tagList
+                      ? article.tagList.join(",")
+                      : ""
+                    : ""
+                }
               />
               <div>
                 <i>Separate your tags with a comma</i>
@@ -51,7 +68,10 @@ const CreateArticleComponent = props => {
             </div>
             <div className="image-div">
               <div className="actual-image">
-                <img src={image} className="image-fluid" />
+                <img
+                  src={image ? image : article ? article.image : " "}
+                  className="image-fluid"
+                />
               </div>
               <input
                 type="file"
@@ -61,7 +81,6 @@ const CreateArticleComponent = props => {
               />
             </div>
 
-            <input name="image" />
             <div className="form-group">
               <button onClick={onSubmit} className="btn btn-primary">
                 Publish Story
