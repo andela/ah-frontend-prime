@@ -465,6 +465,21 @@ exports[`App should render without crashing 1`] = `
           No Articles in Authors Haven Yet
         </div>
       </div>
+      <div>
+        <button
+          className="btn btn-outline-success btn eian"
+          onClick={[Function]}
+        >
+          Previous
+        </button>
+         
+        <button
+          className="btn btn-outline-success btn aken"
+          onClick={[Function]}
+        >
+          Next
+        </button>
+      </div>
     </div>
   </div>
 </div>

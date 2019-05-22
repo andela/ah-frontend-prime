@@ -6,10 +6,23 @@ import { Link } from "react-router-dom";
 import { getArticlesAction } from "../actions/getArticles";
 
 export class Home extends Component {
-  componentDidMount() {
-    this.props.getArticlesAction();
+  constructor(props) {
+    super(props);
+    this.fetchNext = this.fetchNext.bind(this);
+    this.fetchPrevious = this.fetchPrevious.bind(this);
   }
-
+  componentDidMount() {
+    const { getArticlesAction } = this.props;
+    getArticlesAction();
+  }
+  fetchNext() {
+    const { next, getArticlesAction } = this.props;
+    getArticlesAction(next);
+  }
+  fetchPrevious() {
+    const { previous, getArticlesAction } = this.props;
+    getArticlesAction(previous);
+  }
   render() {
     const { articles } = this.props;
     const articleList = articles.length ? (
@@ -65,6 +78,7 @@ export class Home extends Component {
     ) : (
       <div>No Articles in Authors Haven Yet</div>
     );
+
     return (
       <div className="big-container">
         <div className="articles-top">
@@ -113,13 +127,29 @@ export class Home extends Component {
           <hr />
           {articleList}
         </div>
+        <div>
+          <button
+            className="btn btn-outline-success btn eian"
+            onClick={() => this.fetchPrevious()}
+          >
+            Previous
+          </button>{" "}
+          <button
+            className="btn btn-outline-success btn aken"
+            onClick={() => this.fetchNext()}
+          >
+            Next
+          </button>
+        </div>
       </div>
     );
   }
 }
 
 export const mapStateToProps = state => ({
-  articles: state.getArticlesReducer.articles
+  articles: state.getArticlesReducer.articles,
+  next: state.getArticlesReducer.next,
+  previous: state.getArticlesReducer.previous
 });
 
 export default connect(
