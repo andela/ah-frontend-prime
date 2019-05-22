@@ -1,7 +1,15 @@
-import { FETCH_ARTICLE_SUCCESS } from "../actions/types";
+import {
+  FETCH_ARTICLE_SUCCESS,
+  LIKE_ARTICLE_FAILURE,
+  LIKE_ARTICLE_SUCCESS,
+  DISLIKE_ARTICLE_FAILURE,
+  DISLIKE_ARTICLE_SUCCESS
+} from "../actions/types";
 
 const initialState = {
-  article: {}
+  article: {},
+  likes: 0,
+  dislikes: 0
 };
 
 const getArticleReducer = (state = initialState, action) => {
@@ -9,7 +17,21 @@ const getArticleReducer = (state = initialState, action) => {
     case FETCH_ARTICLE_SUCCESS:
       return {
         ...state,
-        article: action.payload
+        article: action.payload,
+        likes: action.payload.article.likes,
+        dislikes: action.payload.article.dislikes
+      };
+    case LIKE_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        likes: action.payload.likes,
+        dislikes: action.payload.dislikes
+      };
+    case DISLIKE_ARTICLE_SUCCESS:
+      return {
+        ...state,
+        likes: action.payload.likes,
+        dislikes: action.payload.dislikes
       };
     default:
       return state;
