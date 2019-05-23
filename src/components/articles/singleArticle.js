@@ -1,22 +1,48 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import moment from "moment";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import FollowsButton from "../FollowsButton";
 import { followUser, unfollowUser } from "../../actions/profileActions";
+import { likeArticle, dislikeArticle } from "../../actions/LikeDislikeActions";
+import like from "../../styles/images/like.png";
+import dislike from "../../styles/images/dislike.png";
 
 import "../../styles/singleArticle.scss";
 import { getArticleAction } from "../../actions/getArticle";
 
 export class SingleArticleComponent extends Component {
+  state = {
+    likes: 0,
+    dislikes: 0
+  };
   componentDidMount() {
     this.props.getArticleAction(this.props.match.params.slug);
+  }
+  componentWillReceiveProps(newProps) {
+    const { likes, dislikes } = newProps;
+    this.setState({
+      likes: likes,
+      dislikes: dislikes
+    });
   }
 
   handlefollowUser = () => {
     const { followUser } = this.props;
     const username = sessionStorage.getItem("userview_name");
     followUser(username);
+  };
+
+  handlelike = () => {
+    const { likeArticle } = this.props;
+    const slug = this.props.match.params.slug;
+    likeArticle(slug);
+  };
+
+  handledislike = () => {
+    const { dislikeArticle } = this.props;
+    const slug = this.props.match.params.slug;
+    dislikeArticle(slug);
   };
 
   handleunfollowUser = () => {
@@ -29,7 +55,8 @@ export class SingleArticleComponent extends Component {
     username === sessionStorage.getItem("username") ? true : false;
 
   render() {
-    const { article, isfollowing } = this.props;
+    const { isfollowing, article } = this.props;
+    const { likes, dislikes } = this.state;
     const oneArticle = article ? article.article : null;
     const singleArticle = oneArticle ? (
       <div className="container">
@@ -104,6 +131,21 @@ export class SingleArticleComponent extends Component {
           <div className="article-description-body">
             <p style={{ fontWeight: "light" }}>{oneArticle.body}</p>
           </div>
+          <div>
+            <img
+              onClick={this.handlelike}
+              src={like}
+              style={{ width: "30px", height: "30px" }}
+            />
+            {likes}
+            <div className="divider" />
+            <img
+              onClick={this.handledislike}
+              src={dislike}
+              style={{ width: "30px", height: "30px" }}
+            />
+            {dislikes}
+          </div>
         </div>
       </div>
     ) : (
@@ -115,10 +157,14 @@ export class SingleArticleComponent extends Component {
 
 export const mapStateToProps = state => ({
   article: state.getArticleReducer.article,
-  isfollowing: state.profileReducer.isfollowing
+  isfollowing: state.profileReducer.isfollowing,
+  likes: state.getArticleReducer.likes,
+  dislikes: state.getArticleReducer.dislikes
 });
 
-export default connect(
-  mapStateToProps,
-  { getArticleAction, followUser, unfollowUser }
-)(SingleArticleComponent);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { getArticleAction, followUser, unfollowUser, likeArticle, dislikeArticle }
+  )(SingleArticleComponent)
+);
