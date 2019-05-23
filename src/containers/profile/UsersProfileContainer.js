@@ -41,7 +41,7 @@ export class UsersProfileContainer extends Component {
 
   componentWillReceiveProps(newProps) {
     const { profile, isfollowing, following, followers } = newProps;
-    if(profile){
+    if (profile) {
       sessionStorage.setItem("userview_name", profile.username);
       this.setState({
         username: profile.username,

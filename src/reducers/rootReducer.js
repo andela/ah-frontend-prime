@@ -9,6 +9,8 @@ import profileReducer from "./profileReducer";
 import getArticleReducer from "./getArticleReducer";
 import createArticleReducer from "./createArticleReducer";
 import followsUnfollowsReducer from "./followsUnfollowsReducer";
+import commentsReducer from "./commentsReducer";
+import getCommentsReducer from "./getCommentsReducer";
 
 export default combineReducers({
   auth_login: loginReducer,
@@ -20,5 +22,8 @@ export default combineReducers({
   passReset: passwordResetReducer,
   passChange: passwordChangeReducer,
   profileReducer: profileReducer,
-  followsUnfollowsReducer: followsUnfollowsReducer
+  followsUnfollowsReducer: followsUnfollowsReducer,
+  profileReducer,
+  comments: commentsReducer,
+  getComments: getCommentsReducer
 });
