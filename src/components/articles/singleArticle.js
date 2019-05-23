@@ -10,6 +10,7 @@ import dislike from "../../styles/images/dislike.png";
 
 import "../../styles/singleArticle.scss";
 import { getArticleAction } from "../../actions/getArticle";
+import Comments from "../comments";
 
 export class SingleArticleComponent extends Component {
   state = {
@@ -130,8 +131,7 @@ export class SingleArticleComponent extends Component {
 
           <div className="article-description-body">
             <p style={{ fontWeight: "light" }}>{oneArticle.body}</p>
-          </div>
-          <div>
+            <div>
             <img
               onClick={this.handlelike}
               src={like}
@@ -145,6 +145,8 @@ export class SingleArticleComponent extends Component {
               style={{ width: "30px", height: "30px" }}
             />
             {dislikes}
+          </div>
+            <Comments articleSlug={oneArticle.slug} />
           </div>
         </div>
       </div>

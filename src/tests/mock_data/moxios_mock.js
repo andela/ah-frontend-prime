@@ -266,3 +266,60 @@ const data = {
 };
 
 export default data;
+
+export const commentData = {
+  id: 126,
+  author: {
+    username: "papanyati",
+    bio: "",
+    email: "briananyati1992@gmail.com",
+    full_name: "",
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/ah-frontend-prime.appspot.com/o/images%2FIMG_1816%20(1).jpeg?alt=media&token=6e866e88-f607-420d-be40-6f61db0682ea",
+    followers_no: 0,
+    following_no: 0,
+    favorite_articles: "No favorite articles"
+  },
+  article: {
+    id: 3,
+    author: {
+      username: "patritsfitz",
+      bio:
+        "This is my favorite song, I just dunno the words, but I still mess with you, you just ain't never heard. It goes like drop that thing. The day you don't drop that thing",
+      email: "patrick.okosu@andela.com",
+      full_name: "PATRICK FITZ",
+      image:
+        "https://firebasestorage.googleapis.com/v0/b/ah-frontend-prime.appspot.com/o/images%2F100_1655.JPG?alt=media&token=08c9e580-a9c2-4121-8fd1-c4e9a236e943",
+      followers_no: 3,
+      following_no: 0,
+      favorite_articles: "No favorite articles"
+    },
+    title: "This is Kev and Fam",
+    average_rating: 0,
+    description: "Kev likes comics",
+    body: "Kev only make ting nice.",
+    image:
+      "https://pbs.twimg.com/profile_images/979164433430626305/ZYnzfyUD_400x400.jpg",
+    createdAt: "2019-05-14T17:15:19.146542Z",
+    updatedAt: "2019-05-14T17:33:25.200755Z",
+    slug: "this-is-kev-0x2",
+    tagList: [],
+    likes: 1,
+    dislikes: 0,
+    reading_time: " less than a minute read",
+    favorite_count: 0
+  },
+  body: "this is agreate articles for the twenty first centuary",
+  parentId: 0,
+  createdAt: "2019-05-22T23:59:36.312451Z",
+  updatedAt: "2019-05-22T23:59:36.312486Z",
+  commentHistory: ""
+};
+export const fetchAllComments = {
+  body:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
+  parentId: 0,
+  createdAt: "2019-05-22T07:47:02.849181Z",
+  updatedAt: "2019-05-22T07:47:02.849215Z",
+  commentHistory: ""
+};
