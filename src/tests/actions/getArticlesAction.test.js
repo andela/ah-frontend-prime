@@ -24,13 +24,25 @@ describe("Action for getting Articles", () => {
       const requestM = moxios.requests.mostRecent();
       requestM.respondWith({
         status: 200,
-        response: { results: data.articles }
+        response: {
+          count: 75,
+          next:
+            "https://ah-backend-prime-staging.herokuapp.com/api/v1/articles/?page_size=2",
+          previous: null,
+          results: data.articles
+        }
       });
     });
     const expectedAction = [
       {
         type: FETCH_ARTICLES_SUCCESS,
-        payload: data.articles
+        payload: {
+          count: 75,
+          next:
+            "https://ah-backend-prime-staging.herokuapp.com/api/v1/articles/?page_size=2",
+          previous: null,
+          results: data.articles
+        }
       }
     ];
     return store.dispatch(getArticlesAction()).then(() => {

@@ -9,7 +9,9 @@ const getArticlesReducer = (state = initialState, action) => {
     case FETCH_ARTICLES_SUCCESS:
       return {
         ...state,
-        articles: action.payload
+        articles: action.payload.results,
+        next: action.payload.next,
+        previous: action.payload["previous"]
       };
     default:
       return state;

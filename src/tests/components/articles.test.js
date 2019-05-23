@@ -10,7 +10,11 @@ import { CreateArticlePage } from "../../components/articles/createArticlePage";
 
 const props = {
   articles: data.articles,
-  getArticlesAction: jest.fn()
+  previous: "",
+  next: "",
+  getArticlesAction: jest.fn(),
+  fetchNext: jest.fn(),
+  fetchPrevious: jest.fn()
 };
 
 const props1 = {
@@ -23,9 +27,12 @@ const props1 = {
 };
 
 describe("Article Components", () => {
+  let homeWrapper;
+  beforeEach(() => {
+    homeWrapper = shallow(<Home {...props} />);
+  });
   it("should render the home page", () => {
-    const wrapper = shallow(<Home {...props} />);
-    expect(wrapper).toMatchSnapshot();
+    expect(homeWrapper).toMatchSnapshot();
   });
 
   it("renders the single article page", () => {
@@ -86,5 +93,29 @@ describe("Article Components", () => {
     wrapper.instance().onSubmit(event);
 
     expect(wrapper.instance().state.body).toEqual("This is the body");
+  });
+  it("should fetch next page", () => {
+    homeWrapper.instance().fetchNext();
+    expect(props.getArticlesAction).toHaveBeenCalled();
+  });
+  it("should fetch previous page", () => {
+    homeWrapper.instance().fetchPrevious();
+    expect(props.getArticlesAction).toHaveBeenCalled();
+  });
+  it("should simulate onclick for next page", () => {
+    homeWrapper
+      .find(".aken")
+      .at(0)
+      .simulate("click");
+
+    expect(props.fetchNext).toHaveBeenCalledTimes(0);
+  });
+  it("should simulate onclick for previous page", () => {
+    homeWrapper
+      .find(".eian")
+      .at(0)
+      .simulate("click");
+
+    expect(props.fetchPrevious).toHaveBeenCalledTimes(0);
   });
 });
