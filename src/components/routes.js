@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { createBrowserHistory } from "history";
 import LoginContainer from "../containers/Login/LoginContainer";
-import CreateArticleComponent from "../components/articles/createArticleComponent";
 import SingleArticleComponent from "../components/articles/singleArticle";
 import NavBarComponent from "../components/navbar";
 import SocialAuthContainer from "../containers/SocialAuthContainer";
@@ -13,12 +13,13 @@ import EditProfileContainer from "../containers/profile/EditProfileContainer";
 import UserArticles from "./articles/userArticles";
 import CreateArticlePage from "./articles/createArticlePage";
 import UsersProfileContainer from "../containers/profile/UsersProfileContainer";
+import EditArticlePage from "./articles/editArticlePage";
 
 class Routes extends Component {
   render() {
     return (
       <div>
-        <BrowserRouter>
+        <BrowserRouter history={createBrowserHistory}>
           <NavBarComponent />
           <Switch>
             <Route path="/" component={Home} exact={true} />
@@ -38,7 +39,7 @@ class Routes extends Component {
 
             <Route path="/create-article" component={CreateArticlePage} />
             <Route path="/article/:slug" component={SingleArticleComponent} />
-
+            <Route path="/edit-article/:slug" component={EditArticlePage} />
             <Route path="/user-articles" component={UserArticles} />
             <Route
               path="/profile/:username"

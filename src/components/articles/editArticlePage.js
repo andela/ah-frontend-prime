@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import "../../styles/app.scss";
 import { articleCreateEditAction } from "../../actions/articleCreateEditAction";
+import { getArticleAction } from "../../actions/getArticle";
 import CreateArticleComponent from "./createArticleComponent";
 import firebase from "../../firebase/config";
+import { TextArea } from "semantic-ui-react";
 
-export class CreateArticlePage extends Component {
+export class EditArticlePage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,6 +22,22 @@ export class CreateArticlePage extends Component {
     this.onSubmit = this.onSubmit.bind(this);
     this.onUpload = this.onUpload.bind(this);
     this.onBodyChange = this.onBodyChange.bind(this);
+  }
+  componentWillMount() {
+    this.props.getArticleAction(this.props.match.params.slug);
+  }
+
+  componentWillReceiveProps(newProps) {
+    if (newProps) {
+      this.setState({
+        title: newProps.article.article.title,
+        description: newProps.article.article.description,
+        body: newProps.article.article.body,
+        image: newProps.article.article.image,
+        tags: newProps.article.tagList,
+        article: newProps.article.article
+      });
+    }
   }
 
   /* istanbul ignore next */
@@ -54,6 +72,7 @@ export class CreateArticlePage extends Component {
   onBodyChange(e) {
     this.setState({ body: e });
   }
+
   onSubmit(e) {
     e.preventDefault();
     const { title, body, description, tags, image } = this.state;
@@ -61,21 +80,26 @@ export class CreateArticlePage extends Component {
       title: title,
       body: body,
       description: description,
-      tags: tags.split(","),
+      tags: tags ? tags.split(",") : "",
       image: image
     };
+    const url =
+      "https://ah-backend-prime-staging.herokuapp.com/api/v1/articles/" +
+      this.props.match.params.slug +
+      "/";
 
     this.props.articleCreateEditAction(
       messageObject,
-      "https://ah-backend-prime-staging.herokuapp.com/api/v1/articles/",
-      "post",
+      url,
+      "put",
       this.props,
-      "created"
+      "updated"
     );
   }
 
   render() {
-    const { image } = this.state;
+    const { image, article } = this.state;
+
     return (
       <div>
         <CreateArticleComponent
@@ -85,13 +109,18 @@ export class CreateArticlePage extends Component {
           onSubmit={this.onSubmit}
           onBodyChange={this.onBodyChange}
           image={image}
+          article={article ? article : null}
         />
       </div>
     );
   }
 }
 
+export const mapStateToProps = state => ({
+  article: state.getArticleReducer.article
+});
+
 export default connect(
-  null,
-  { articleCreateEditAction }
-)(CreateArticlePage);
+  mapStateToProps,
+  { getArticleAction, articleCreateEditAction }
+)(EditArticlePage);

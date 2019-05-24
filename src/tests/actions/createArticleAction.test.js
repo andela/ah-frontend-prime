@@ -33,20 +33,20 @@ describe("Action for creating Articles", () => {
       const requestM = moxios.requests.mostRecent();
       requestM.respondWith({
         status: 201,
-        response: { article: data.article }
+        response: {}
       });
     });
 
     const expectedAction = [
       {
         type: ARTICLE_SUCCESS,
-        payload: data.article.slug
+        payload: {}
       }
     ];
     return store
       .dispatch(
         articleCreateEditAction(
-          data.article1,
+          data.article,
           "https://www.makesite.com/",
           "post",
           {
